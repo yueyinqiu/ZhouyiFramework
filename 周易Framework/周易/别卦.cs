@@ -1,0 +1,41 @@
+﻿using System;
+using System.Resources;
+
+namespace 周易
+{
+    public sealed partial class 别卦
+    {
+        internal 别卦(string 卦名, string 卦辞, string 用辞, params 爻[] 各爻)
+        {
+            this.卦名 = 卦名;
+            this.卦辞 = 卦辞;
+            this.用辞 = 用辞;
+            this.各爻 = 各爻;
+        }
+
+        public 卦画 卦画 =>
+            new 卦画(this.各爻);
+        public string 卦名 { get; }
+        public string 卦辞 { get; }
+        public string 用辞 { get; }
+
+        private 爻[] 各爻;
+
+        public 爻 获取爻(int index)
+            => this.各爻[index];
+        public 爻 获取爻(爻题 爻题)
+            => this.各爻[爻题.爻位置 - 1];
+
+        #region 客卦
+        public 爻 上爻 => this.各爻[5];
+        public 爻 五爻 => this.各爻[4];
+        public 爻 四爻 => this.各爻[3];
+        #endregion
+
+        #region 主卦
+        public 爻 三爻 => this.各爻[2];
+        public 爻 二爻 => this.各爻[1];
+        public 爻 初爻 => this.各爻[0];
+        #endregion
+    }
+}
