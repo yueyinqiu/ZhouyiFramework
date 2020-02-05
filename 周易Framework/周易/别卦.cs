@@ -27,12 +27,20 @@ namespace 周易
             => this.各爻[爻题.爻位置 - 1];
 
         #region 客卦
+        public 经卦 客卦 => new 经卦(
+            this.四爻.爻题.爻阴阳,
+            this.五爻.爻题.爻阴阳,
+            this.上爻.爻题.爻阴阳);
         public 爻 上爻 => this.各爻[5];
         public 爻 五爻 => this.各爻[4];
         public 爻 四爻 => this.各爻[3];
         #endregion
 
         #region 主卦
+        public 经卦 主卦 => new 经卦(
+            this.初爻.爻题.爻阴阳,
+            this.二爻.爻题.爻阴阳,
+            this.三爻.爻题.爻阴阳);
         public 爻 三爻 => this.各爻[2];
         public 爻 二爻 => this.各爻[1];
         public 爻 初爻 => this.各爻[0];

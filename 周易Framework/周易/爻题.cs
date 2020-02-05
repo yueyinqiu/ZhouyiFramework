@@ -9,16 +9,16 @@ namespace 周易
         internal 爻题(int 位置, 阴阳 阴阳性质)
         {
             this.爻位置 = 位置;
-            this.爻阴阳性质 = 阴阳性质;
+            this.爻阴阳 = 阴阳性质;
         }
         public int Index => this.爻位置 - 1;
         public int 爻位置 { get; }
-        public 阴阳 爻阴阳性质 { get; }
+        public 阴阳 爻阴阳 { get; }
 
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder(2);
-            stringBuilder.Append(this.爻阴阳性质 == 阴阳.阳 ? '九' : '六');
+            stringBuilder.Append(this.爻阴阳 == 阴阳.阳 ? '九' : '六');
             switch (this.爻位置)
             {
                 case 1:
