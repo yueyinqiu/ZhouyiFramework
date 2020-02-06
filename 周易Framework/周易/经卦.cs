@@ -5,6 +5,9 @@ using System.Text;
 
 namespace 周易
 {
+    /// <summary>
+    /// Represents a trigram (the eight diagram) .
+    /// </summary>
     public sealed partial class 经卦
     {
         internal 经卦(byte index, char 卦名, 卦画 卦画)
