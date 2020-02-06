@@ -63,9 +63,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _0 {
+        internal static byte[] G0 {
             get {
-                object obj = ResourceManager.GetObject("_0", resourceCulture);
+                object obj = ResourceManager.GetObject("G0", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _1 {
+        internal static byte[] G1 {
             get {
-                object obj = ResourceManager.GetObject("_1", resourceCulture);
+                object obj = ResourceManager.GetObject("G1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _10 {
+        internal static byte[] G10 {
             get {
-                object obj = ResourceManager.GetObject("_10", resourceCulture);
+                object obj = ResourceManager.GetObject("G10", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _11 {
+        internal static byte[] G11 {
             get {
-                object obj = ResourceManager.GetObject("_11", resourceCulture);
+                object obj = ResourceManager.GetObject("G11", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _12 {
+        internal static byte[] G12 {
             get {
-                object obj = ResourceManager.GetObject("_12", resourceCulture);
+                object obj = ResourceManager.GetObject("G12", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _13 {
+        internal static byte[] G13 {
             get {
-                object obj = ResourceManager.GetObject("_13", resourceCulture);
+                object obj = ResourceManager.GetObject("G13", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _14 {
+        internal static byte[] G14 {
             get {
-                object obj = ResourceManager.GetObject("_14", resourceCulture);
+                object obj = ResourceManager.GetObject("G14", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _15 {
+        internal static byte[] G15 {
             get {
-                object obj = ResourceManager.GetObject("_15", resourceCulture);
+                object obj = ResourceManager.GetObject("G15", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _16 {
+        internal static byte[] G16 {
             get {
-                object obj = ResourceManager.GetObject("_16", resourceCulture);
+                object obj = ResourceManager.GetObject("G16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _17 {
+        internal static byte[] G17 {
             get {
-                object obj = ResourceManager.GetObject("_17", resourceCulture);
+                object obj = ResourceManager.GetObject("G17", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _18 {
+        internal static byte[] G18 {
             get {
-                object obj = ResourceManager.GetObject("_18", resourceCulture);
+                object obj = ResourceManager.GetObject("G18", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _19 {
+        internal static byte[] G19 {
             get {
-                object obj = ResourceManager.GetObject("_19", resourceCulture);
+                object obj = ResourceManager.GetObject("G19", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _2 {
+        internal static byte[] G2 {
             get {
-                object obj = ResourceManager.GetObject("_2", resourceCulture);
+                object obj = ResourceManager.GetObject("G2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _20 {
+        internal static byte[] G20 {
             get {
-                object obj = ResourceManager.GetObject("_20", resourceCulture);
+                object obj = ResourceManager.GetObject("G20", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _21 {
+        internal static byte[] G21 {
             get {
-                object obj = ResourceManager.GetObject("_21", resourceCulture);
+                object obj = ResourceManager.GetObject("G21", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _22 {
+        internal static byte[] G22 {
             get {
-                object obj = ResourceManager.GetObject("_22", resourceCulture);
+                object obj = ResourceManager.GetObject("G22", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _23 {
+        internal static byte[] G23 {
             get {
-                object obj = ResourceManager.GetObject("_23", resourceCulture);
+                object obj = ResourceManager.GetObject("G23", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _24 {
+        internal static byte[] G24 {
             get {
-                object obj = ResourceManager.GetObject("_24", resourceCulture);
+                object obj = ResourceManager.GetObject("G24", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _25 {
+        internal static byte[] G25 {
             get {
-                object obj = ResourceManager.GetObject("_25", resourceCulture);
+                object obj = ResourceManager.GetObject("G25", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -253,9 +253,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _26 {
+        internal static byte[] G26 {
             get {
-                object obj = ResourceManager.GetObject("_26", resourceCulture);
+                object obj = ResourceManager.GetObject("G26", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -263,9 +263,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _27 {
+        internal static byte[] G27 {
             get {
-                object obj = ResourceManager.GetObject("_27", resourceCulture);
+                object obj = ResourceManager.GetObject("G27", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -273,9 +273,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _28 {
+        internal static byte[] G28 {
             get {
-                object obj = ResourceManager.GetObject("_28", resourceCulture);
+                object obj = ResourceManager.GetObject("G28", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -283,9 +283,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _29 {
+        internal static byte[] G29 {
             get {
-                object obj = ResourceManager.GetObject("_29", resourceCulture);
+                object obj = ResourceManager.GetObject("G29", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -293,9 +293,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _3 {
+        internal static byte[] G3 {
             get {
-                object obj = ResourceManager.GetObject("_3", resourceCulture);
+                object obj = ResourceManager.GetObject("G3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -303,9 +303,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _30 {
+        internal static byte[] G30 {
             get {
-                object obj = ResourceManager.GetObject("_30", resourceCulture);
+                object obj = ResourceManager.GetObject("G30", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -313,9 +313,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _31 {
+        internal static byte[] G31 {
             get {
-                object obj = ResourceManager.GetObject("_31", resourceCulture);
+                object obj = ResourceManager.GetObject("G31", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -323,9 +323,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _32 {
+        internal static byte[] G32 {
             get {
-                object obj = ResourceManager.GetObject("_32", resourceCulture);
+                object obj = ResourceManager.GetObject("G32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -333,9 +333,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _33 {
+        internal static byte[] G33 {
             get {
-                object obj = ResourceManager.GetObject("_33", resourceCulture);
+                object obj = ResourceManager.GetObject("G33", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -343,9 +343,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _34 {
+        internal static byte[] G34 {
             get {
-                object obj = ResourceManager.GetObject("_34", resourceCulture);
+                object obj = ResourceManager.GetObject("G34", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -353,9 +353,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _35 {
+        internal static byte[] G35 {
             get {
-                object obj = ResourceManager.GetObject("_35", resourceCulture);
+                object obj = ResourceManager.GetObject("G35", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -363,9 +363,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _36 {
+        internal static byte[] G36 {
             get {
-                object obj = ResourceManager.GetObject("_36", resourceCulture);
+                object obj = ResourceManager.GetObject("G36", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -373,9 +373,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _37 {
+        internal static byte[] G37 {
             get {
-                object obj = ResourceManager.GetObject("_37", resourceCulture);
+                object obj = ResourceManager.GetObject("G37", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -383,9 +383,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _38 {
+        internal static byte[] G38 {
             get {
-                object obj = ResourceManager.GetObject("_38", resourceCulture);
+                object obj = ResourceManager.GetObject("G38", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -393,9 +393,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _39 {
+        internal static byte[] G39 {
             get {
-                object obj = ResourceManager.GetObject("_39", resourceCulture);
+                object obj = ResourceManager.GetObject("G39", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -403,9 +403,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _4 {
+        internal static byte[] G4 {
             get {
-                object obj = ResourceManager.GetObject("_4", resourceCulture);
+                object obj = ResourceManager.GetObject("G4", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -413,9 +413,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _40 {
+        internal static byte[] G40 {
             get {
-                object obj = ResourceManager.GetObject("_40", resourceCulture);
+                object obj = ResourceManager.GetObject("G40", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -423,9 +423,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _41 {
+        internal static byte[] G41 {
             get {
-                object obj = ResourceManager.GetObject("_41", resourceCulture);
+                object obj = ResourceManager.GetObject("G41", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -433,9 +433,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _42 {
+        internal static byte[] G42 {
             get {
-                object obj = ResourceManager.GetObject("_42", resourceCulture);
+                object obj = ResourceManager.GetObject("G42", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -443,9 +443,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _43 {
+        internal static byte[] G43 {
             get {
-                object obj = ResourceManager.GetObject("_43", resourceCulture);
+                object obj = ResourceManager.GetObject("G43", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -453,9 +453,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _44 {
+        internal static byte[] G44 {
             get {
-                object obj = ResourceManager.GetObject("_44", resourceCulture);
+                object obj = ResourceManager.GetObject("G44", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -463,9 +463,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _45 {
+        internal static byte[] G45 {
             get {
-                object obj = ResourceManager.GetObject("_45", resourceCulture);
+                object obj = ResourceManager.GetObject("G45", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -473,9 +473,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _46 {
+        internal static byte[] G46 {
             get {
-                object obj = ResourceManager.GetObject("_46", resourceCulture);
+                object obj = ResourceManager.GetObject("G46", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -483,9 +483,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _47 {
+        internal static byte[] G47 {
             get {
-                object obj = ResourceManager.GetObject("_47", resourceCulture);
+                object obj = ResourceManager.GetObject("G47", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -493,9 +493,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _48 {
+        internal static byte[] G48 {
             get {
-                object obj = ResourceManager.GetObject("_48", resourceCulture);
+                object obj = ResourceManager.GetObject("G48", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -503,9 +503,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _49 {
+        internal static byte[] G49 {
             get {
-                object obj = ResourceManager.GetObject("_49", resourceCulture);
+                object obj = ResourceManager.GetObject("G49", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -513,9 +513,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _5 {
+        internal static byte[] G5 {
             get {
-                object obj = ResourceManager.GetObject("_5", resourceCulture);
+                object obj = ResourceManager.GetObject("G5", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -523,9 +523,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _50 {
+        internal static byte[] G50 {
             get {
-                object obj = ResourceManager.GetObject("_50", resourceCulture);
+                object obj = ResourceManager.GetObject("G50", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -533,9 +533,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _51 {
+        internal static byte[] G51 {
             get {
-                object obj = ResourceManager.GetObject("_51", resourceCulture);
+                object obj = ResourceManager.GetObject("G51", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -543,9 +543,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _52 {
+        internal static byte[] G52 {
             get {
-                object obj = ResourceManager.GetObject("_52", resourceCulture);
+                object obj = ResourceManager.GetObject("G52", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -553,9 +553,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _53 {
+        internal static byte[] G53 {
             get {
-                object obj = ResourceManager.GetObject("_53", resourceCulture);
+                object obj = ResourceManager.GetObject("G53", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -563,9 +563,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _54 {
+        internal static byte[] G54 {
             get {
-                object obj = ResourceManager.GetObject("_54", resourceCulture);
+                object obj = ResourceManager.GetObject("G54", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -573,9 +573,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _55 {
+        internal static byte[] G55 {
             get {
-                object obj = ResourceManager.GetObject("_55", resourceCulture);
+                object obj = ResourceManager.GetObject("G55", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -583,9 +583,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _56 {
+        internal static byte[] G56 {
             get {
-                object obj = ResourceManager.GetObject("_56", resourceCulture);
+                object obj = ResourceManager.GetObject("G56", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -593,9 +593,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _57 {
+        internal static byte[] G57 {
             get {
-                object obj = ResourceManager.GetObject("_57", resourceCulture);
+                object obj = ResourceManager.GetObject("G57", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -603,9 +603,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _58 {
+        internal static byte[] G58 {
             get {
-                object obj = ResourceManager.GetObject("_58", resourceCulture);
+                object obj = ResourceManager.GetObject("G58", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -613,9 +613,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _59 {
+        internal static byte[] G59 {
             get {
-                object obj = ResourceManager.GetObject("_59", resourceCulture);
+                object obj = ResourceManager.GetObject("G59", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -623,9 +623,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _6 {
+        internal static byte[] G6 {
             get {
-                object obj = ResourceManager.GetObject("_6", resourceCulture);
+                object obj = ResourceManager.GetObject("G6", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -633,9 +633,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _60 {
+        internal static byte[] G60 {
             get {
-                object obj = ResourceManager.GetObject("_60", resourceCulture);
+                object obj = ResourceManager.GetObject("G60", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -643,9 +643,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _61 {
+        internal static byte[] G61 {
             get {
-                object obj = ResourceManager.GetObject("_61", resourceCulture);
+                object obj = ResourceManager.GetObject("G61", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -653,9 +653,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _62 {
+        internal static byte[] G62 {
             get {
-                object obj = ResourceManager.GetObject("_62", resourceCulture);
+                object obj = ResourceManager.GetObject("G62", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -663,9 +663,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _63 {
+        internal static byte[] G63 {
             get {
-                object obj = ResourceManager.GetObject("_63", resourceCulture);
+                object obj = ResourceManager.GetObject("G63", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -673,9 +673,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _7 {
+        internal static byte[] G7 {
             get {
-                object obj = ResourceManager.GetObject("_7", resourceCulture);
+                object obj = ResourceManager.GetObject("G7", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -683,9 +683,9 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _8 {
+        internal static byte[] G8 {
             get {
-                object obj = ResourceManager.GetObject("_8", resourceCulture);
+                object obj = ResourceManager.GetObject("G8", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -693,10 +693,19 @@ namespace 周易 {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] _9 {
+        internal static byte[] G9 {
             get {
-                object obj = ResourceManager.GetObject("_9", resourceCulture);
+                object obj = ResourceManager.GetObject("G9", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 见群龙无首，吉。 的本地化字符串。
+        /// </summary>
+        internal static string 乾卦用辞 {
+            get {
+                return ResourceManager.GetString("乾卦用辞", resourceCulture);
             }
         }
         
@@ -717,6 +726,15 @@ namespace 周易 {
             get {
                 object obj = ResourceManager.GetObject("别卦经卦对照", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 利永贞。 的本地化字符串。
+        /// </summary>
+        internal static string 坤卦用辞 {
+            get {
+                return ResourceManager.GetString("坤卦用辞", resourceCulture);
             }
         }
         

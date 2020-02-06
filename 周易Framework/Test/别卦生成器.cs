@@ -10,11 +10,11 @@ namespace Test
 {
     class 别卦生成器
     {
-        private static void Start()
+        public static void Start()
         {
             for (byte i = 0; i < 64; i++)
             {
-                using (var fs = new FileStream($"qaq/{i}", FileMode.Create))
+                using (var fs = new FileStream($"qaq/G{i}", FileMode.Create))
                 using (var sr = new StreamWriter(fs))
                 {
                     GetInfoOfOne(fs, sr);

@@ -49,9 +49,9 @@ namespace 周易
             BitArray bitArray = new BitArray(new byte[] { b });
             List<阴阳> r = new List<阴阳>(6);
             bool notStarted = true;
-            for (int i = 0; i < 8; i++)
+            for (int i = 7; i >= 0; i--)
             {
-                var bit = bitArray[i + 2];
+                var bit = bitArray[i];
                 if (notStarted)
                 {
                     if (bit)
