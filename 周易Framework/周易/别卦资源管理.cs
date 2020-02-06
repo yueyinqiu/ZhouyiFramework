@@ -8,6 +8,31 @@ namespace 周易
 {
     public sealed partial class 别卦
     {
+        public static IEnumerable<string> 全部别卦卦名
+        {
+            get
+            {
+                using (var ms = Resource.ResourceManager.GetStream(nameof(Resource.别卦卦名对照)))
+                {
+                    for (byte r = 0; r < 64; r++)
+                    {
+                        List<byte> bytes = new List<byte>(8);
+                        for (; ; )
+                        {
+                            var br = ms.ReadByte();
+                            if (br == 30)
+                            {
+                                break;
+                            }
+                            bytes.Add((byte)br);
+                        }
+                        var str = Encoding.UTF8.GetString(bytes.ToArray());
+                        yield return str;
+                    }
+                }
+            }
+        }
+
         public static 别卦 获取别卦(string 卦名)
         {
             byte? index = null;

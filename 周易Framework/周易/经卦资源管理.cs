@@ -7,11 +7,25 @@ namespace 周易
 {
     public sealed partial class 经卦
     {
+        public static IEnumerable<char> 全部经卦卦名
+        {
+            get
+            {
+                using (var ms = Resource.ResourceManager.GetStream(nameof(Resource.经卦卦名对照)))
+                using (StreamReader sr = new StreamReader(ms, Encoding.UTF8, false))
+                {
+                    for (byte i = 0; i < 8; i++)
+                    {
+                        yield return (char)sr.Read();
+                    }
+                }
+            }
+        }
         public static 经卦 获取经卦(char 卦名)
         {
             byte? index = null;
             using (var ms = Resource.ResourceManager.GetStream(nameof(Resource.经卦卦名对照)))
-            using (StreamReader sr = new StreamReader(ms, Encoding.UTF8))
+            using (StreamReader sr = new StreamReader(ms, Encoding.UTF8,false))
             {
                 for (byte i = 0; i < 8; i++)
                 {
