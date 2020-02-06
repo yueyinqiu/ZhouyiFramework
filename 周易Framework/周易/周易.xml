@@ -396,13 +396,6 @@
             It will returns null if the hexagram isn't "qian" or "kun".
             </summary>
         </member>
-        <member name="M:周易.别卦.获取爻(System.Int32)">
-            <summary>
-            Get the yao which means the whole and broken linear symbols making up the eight trigrams in Zhouyi.
-            </summary>
-            <param name="index">The index. It starts from 0 and the maximum is 6.</param>
-            <returns>The yao.</returns>
-        </member>
         <member name="T:周易.经卦">
             <summary>
             Represents a trigram (the eight diagram) .

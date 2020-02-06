@@ -151,7 +151,7 @@ namespace 周易
                     {
                         阴阳 = 客卦.卦画[i - 3];
                     }
-                    各爻[i] = new 爻(i, 阴阳, Encoding.UTF8.GetString(bytes.ToArray()));
+                    各爻[i] = new 爻(i + 1, 阴阳, Encoding.UTF8.GetString(bytes.ToArray()));
                 }
             }
 
@@ -176,8 +176,8 @@ namespace 周易
                 {
                     if (ms.ReadByte() == index)
                     {
-                        主卦 = 经卦.获取经卦((byte)(i / 6));
-                        客卦 = 经卦.获取经卦((byte)(i % 6));
+                        主卦 = 经卦.获取经卦((byte)(i % 8));
+                        客卦 = 经卦.获取经卦((byte)(i / 8));
                     }
                 }
             }
@@ -220,7 +220,7 @@ namespace 周易
                     {
                         阴阳 = 客卦.卦画[i - 3];
                     }
-                    各爻[i] = new 爻(i, 阴阳, Encoding.UTF8.GetString(bytes.ToArray()));
+                    各爻[i] = new 爻(i + 1, 阴阳, Encoding.UTF8.GetString(bytes.ToArray()));
                 }
             }
 

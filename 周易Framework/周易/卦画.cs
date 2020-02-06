@@ -9,6 +9,7 @@ namespace 周易
     public sealed class 卦画 : IEnumerable<阴阳>
     {
         private 阴阳[] 各爻阴阳 { get; set; }
+
         public 阴阳 this[int index]
         {
             get
@@ -16,7 +17,12 @@ namespace 周易
                 return this.各爻阴阳[index];
             }
         }
+        IEnumerator IEnumerable.GetEnumerator()
+            => this.各爻阴阳.GetEnumerator();
+        public IEnumerator<阴阳> GetEnumerator()
+            => ((IEnumerable<阴阳>)this.各爻阴阳).GetEnumerator();
         public byte 爻数 => (byte)this.各爻阴阳.Length;
+
         private 卦画() { }
         internal 卦画(params 阴阳[] 各爻阴阳)
         {
@@ -28,6 +34,7 @@ namespace 周易
                 (from 爻 in 各爻
                  select 爻.爻题.爻阴阳).ToArray();
         }
+
         public byte ToByte()
         {
             byte result = 0;
@@ -86,15 +93,11 @@ namespace 周易
                 {
                     throw new ArgumentException($"{nameof(s)}的内容不正确。只允许出现数字字符。", nameof(s));
                 }
-                r.Add(c / 2 == 0 ? 阴阳.阴 : 阴阳.阳);
+                r.Add(c % 2 == 0 ? 阴阳.阴 : 阴阳.阳);
             }
             return new 卦画() {
                 各爻阴阳 = r.ToArray()
             };
         }
-        public IEnumerator<阴阳> GetEnumerator() =>
-            ((IEnumerable<阴阳>)this.各爻阴阳).GetEnumerator();
-        IEnumerator IEnumerable.GetEnumerator() =>
-            ((IEnumerable<阴阳>)this.各爻阴阳).GetEnumerator();
     }
 }
