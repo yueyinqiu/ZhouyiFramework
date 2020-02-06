@@ -6,9 +6,17 @@ using System.Text;
 
 namespace 周易
 {
-    public sealed class 卦画
+    public sealed class 卦画 : IEnumerable<阴阳>
     {
-        public IEnumerable<阴阳> 各爻阴阳 { get; private set; }
+        private 阴阳[] 各爻阴阳 { get; set; }
+        public 阴阳 this[int index]
+        {
+            get
+            {
+                return this.各爻阴阳[index];
+            }
+        }
+        public byte 爻数 => (byte)this.各爻阴阳.Length;
         private 卦画() { }
         internal 卦画(params 阴阳[] 各爻阴阳)
         {
@@ -17,8 +25,8 @@ namespace 周易
         internal 卦画(params 爻[] 各爻)
         {
             this.各爻阴阳 =
-                from 爻 in 各爻
-                select 爻.爻题.爻阴阳;
+                (from 爻 in 各爻
+                 select 爻.爻题.爻阴阳).ToArray();
         }
         public byte ToByte()
         {
@@ -53,7 +61,7 @@ namespace 周易
                 r.Add(bit ? 阴阳.阳 : 阴阳.阴);
             }
             return new 卦画() {
-                各爻阴阳 = r
+                各爻阴阳 = r.ToArray()
             };
         }
         public override string ToString()
@@ -81,8 +89,12 @@ namespace 周易
                 r.Add(c / 2 == 0 ? 阴阳.阴 : 阴阳.阳);
             }
             return new 卦画() {
-                各爻阴阳 = r
+                各爻阴阳 = r.ToArray()
             };
         }
+        public IEnumerator<阴阳> GetEnumerator() =>
+            ((IEnumerable<阴阳>)this.各爻阴阳).GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() =>
+            ((IEnumerable<阴阳>)this.各爻阴阳).GetEnumerator();
     }
 }
