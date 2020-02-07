@@ -457,8 +457,13 @@
             <summary>
             Get a hexagram from its name.
             </summary>
-            <param name="卦名">The name.</param>
+            <param name="卦名">
+            The name.
+            The value shouldn't end with '卦'.
+            </param>
             <returns>The hexagram.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">No such hexagram was found.</exception>
+            <exception cref="T:System.ArgumentNullException"> <paramref name="卦名"/> is null.</exception>
         </member>
         <member name="M:周易.别卦.获取别卦(周易.经卦,周易.经卦)">
             <summary>
@@ -467,19 +472,24 @@
             <param name="主卦">The lower trigram.</param>
             <param name="客卦">The upper trigram.</param>
             <returns>The hexagram.</returns>
+            <exception cref="T:System.ArgumentNullException">At least one argument is null.</exception>
         </member>
         <member name="M:周易.别卦.获取别卦(周易.卦画)">
             <summary>
             Get a hexagram from its painting.
             </summary>
-            <param name="卦画">The painting.</param>
+            <param name="卦画">
+            The painting.
+            Its property <see cref="P:周易.卦画.爻数"/> should be 6.
+            </param>
             <returns>The hexagram.</returns>
+            <exception cref="T:System.ArgumentException"> <see cref="P:周易.卦画.爻数"/> of <paramref name="卦画"/> isn't 6.</exception>
+            <exception cref="T:System.ArgumentNullException"> <paramref name="卦画"/> is null.</exception>
         </member>
         <member name="T:周易.卦画">
             <summary>
             Represents a painting made up by the yin and yang lines.
-            While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="M:周易.卦画.FromByte(System.Byte)"/> and <seealso cref="M:周易.卦画.Parse(System.String)"/> to make your own painting.
-            But do not make a painting including more than 7 lines, it may lead to abnormal results.
+            While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="M:周易.卦画.FromByte(System.Byte)"/> and <seealso cref="M:周易.卦画.Parse(System.String)"/> to make your own painting but a painting including more than 7 lines is not allowed.
             When you use this class as <see cref="T:System.Collections.IEnumerable"/> or <see cref="T:System.Collections.Generic.IEnumerable`1"/> , you will get the lower lines first.
             </summary>
         </member>
@@ -493,6 +503,7 @@
             The minimum value is 0.
             </param>
             <returns>The attribute of the line.</returns>
+            <exception cref="T:System.IndexOutOfRangeException"> <paramref name="index"/> is out of range.</exception>
         </member>
         <member name="M:周易.卦画.GetEnumerator">
             <summary>
@@ -531,8 +542,13 @@
             <summary>
             Convert from a <see cref="T:System.String"/> .
             </summary>
-            <param name="s">The string represents the painting.</param>
+            <param name="s">
+            The string represents the painting.
+            Its property <see cref="P:System.String.Length"/> should be less than 8 and only digits are allowed.
+            </param>
             <returns>The painting.</returns>
+            <exception cref="T:System.ArgumentNullException"> <paramref name="s"/> is null.</exception>
+            <exception cref="T:System.FormatException"> <paramref name="s"/> is not in the correct format.</exception>
         </member>
         <member name="T:周易.爻">
             <summary>
@@ -630,13 +646,19 @@
             </summary>
             <param name="卦名">The name.</param>
             <returns>The trigram.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">No such trigram was found.</exception>
         </member>
         <member name="M:周易.经卦.获取经卦(周易.卦画)">
             <summary>
             Get a trigram from its painting.
             </summary>
-            <param name="卦画">The painting.</param>
+            <param name="卦画">
+            The painting.
+            Its property <see cref="P:周易.卦画.爻数"/> should be 3.
+            </param>
             <returns>The trigram.</returns>
+            <exception cref="T:System.ArgumentException"> <see cref="P:周易.卦画.爻数"/> of <paramref name="卦画"/> isn't 3.</exception>
+            <exception cref="T:System.ArgumentNullException"> <paramref name="卦画"/> is null.</exception>
         </member>
         <member name="T:周易.阴阳">
             <summary>

@@ -8,7 +8,7 @@ namespace 周易
 {
     /// <summary>
     /// Represents a painting made up by the yin and yang lines.
-    /// While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="FromByte(byte)"/> and <seealso cref="Parse(string)"/> to make your own painting but a painting including more than 7 lines is not allowed.
+    /// While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="卦画(阴阳[])"/> , <seealso cref="FromByte(byte)"/> and <seealso cref="Parse(string)"/> to make your own painting but a painting including more than 7 lines is not allowed.
     /// When you use this class as <see cref="IEnumerable"/> or <see cref="IEnumerable{T}"/> , you will get the lower lines first.
     /// </summary>
     public sealed class 卦画 : IEnumerable<阴阳>
@@ -41,6 +41,10 @@ namespace 周易
         public byte 爻数 => (byte)this.各爻阴阳.Length;
 
         private 卦画() { }
+        /// <summary>
+        /// Initializes a new instance of <seealso cref="卦画"/>.
+        /// </summary>
+        /// <param name="各爻阴阳"></param>
         public 卦画(params 阴阳[] 各爻阴阳)
         {
             if (各爻阴阳 == null)

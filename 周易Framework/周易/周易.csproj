@@ -23,9 +23,10 @@
     <RepositoryType>git</RepositoryType>
     <PackageIcon>太极.png</PackageIcon>
     <PackageIconUrl />
-    <PackageLicenseFile>license.md</PackageLicenseFile>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
     <Version>2.0.1</Version>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>C:\Users\user\source\repos\ZhouyiFramework\周易Framework\周易\周易.xml</DocumentationFile>
@@ -46,7 +47,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\license.md">
+    <None Include="..\license.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
