@@ -377,7 +377,7 @@
         </member>
         <member name="T:周易.别卦">
             <summary>
-            Represents a hexagram (the divinatory symbol) .
+            Represents a hexagram.
             </summary>
         </member>
         <member name="P:周易.别卦.卦画">
@@ -398,17 +398,259 @@
         <member name="P:周易.别卦.用辞">
             <summary>
             Get the the words after the word "yong" which only exists in Ch'ien (Heaven) and K'un (Earth).
-            It will returns null if the hexagram isn't "qian" or "kun".
+            It will returns null if the hexagram isn't Ch'ien or K'un.
             </summary>
+        </member>
+        <member name="P:周易.别卦.各爻">
+            <summary>
+            Get the lines of this hexagram.
+            It will starts from the bottom one.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.客卦">
+            <summary>
+            Get the upper trigram.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.上爻">
+            <summary>
+            Get the top (sixth) line.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.五爻">
+            <summary>
+            Get the fifth line.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.四爻">
+            <summary>
+            Get the fourth line.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.主卦">
+            <summary>
+            Get the lower trigram.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.三爻">
+            <summary>
+            Get the third line.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.二爻">
+            <summary>
+            Get the second line.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.初爻">
+            <summary>
+            Get the bottom (first) line.
+            </summary>
+        </member>
+        <member name="P:周易.别卦.全部别卦卦名">
+            <summary>
+            Get the names of all hexagrams.
+            This is arranged according to I Ching (I don't want to list it, buy the book and you will know it).
+            </summary>
+        </member>
+        <member name="M:周易.别卦.获取别卦(System.String)">
+            <summary>
+            Get a hexagram from its name.
+            </summary>
+            <param name="卦名">The name.</param>
+            <returns>The hexagram.</returns>
+        </member>
+        <member name="M:周易.别卦.获取别卦(周易.经卦,周易.经卦)">
+            <summary>
+            Get a hexagram from its two trigrams.
+            </summary>
+            <param name="主卦">The lower trigram.</param>
+            <param name="客卦">The upper trigram.</param>
+            <returns>The hexagram.</returns>
+        </member>
+        <member name="M:周易.别卦.获取别卦(周易.卦画)">
+            <summary>
+            Get a hexagram from its painting.
+            </summary>
+            <param name="卦画">The painting.</param>
+            <returns>The hexagram.</returns>
+        </member>
+        <member name="T:周易.卦画">
+            <summary>
+            Represents a painting made up by the yin and yang lines.
+            While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="M:周易.卦画.FromByte(System.Byte)"/> and <seealso cref="M:周易.卦画.Parse(System.String)"/> to make your own painting.
+            But do not make a painting including more than 7 lines, it may lead to abnormal results.
+            When you use this class as <see cref="T:System.Collections.IEnumerable"/> or <see cref="T:System.Collections.Generic.IEnumerable`1"/> , you will get the lower lines first.
+            </summary>
+        </member>
+        <member name="P:周易.卦画.Item(System.Int32)">
+            <summary>
+            Get the attribute (yin or yang) of a line in the painting.
+            </summary>
+            <param name="index">
+            The index of the line you want to get.
+            The higher the value is, the upper the line you will get.
+            The minimum value is 0.
+            </param>
+            <returns>The attribute of the line.</returns>
+        </member>
+        <member name="M:周易.卦画.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            When you use this enumerator, you will get the lower lines first.
+            </summary>
+            <returns>An enumerator that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="P:周易.卦画.爻数">
+            <summary>
+            The count of the lines in the painting.
+            </summary>
+        </member>
+        <member name="M:周易.卦画.ToByte">
+            <summary>
+            Convert to a <see cref="T:System.Byte"/> .
+            You can convert it back by using <seealso cref="M:周易.卦画.FromByte(System.Byte)"/> .
+            </summary>
+            <returns>The byte that can represent this painting.</returns>
+        </member>
+        <member name="M:周易.卦画.FromByte(System.Byte)">
+            <summary>
+            Convert from a <see cref="T:System.Byte"/> .
+            </summary>
+            <param name="b">The byte that represents this painting.</param>
+            <returns>The painting.</returns>
+        </member>
+        <member name="M:周易.卦画.ToString">
+            <summary>
+            Returns a string that represents the painting.
+            You can use <seealso cref="M:周易.卦画.Parse(System.String)"/> to convert it back.
+            </summary>
+            <returns>The string.</returns>
+        </member>
+        <member name="M:周易.卦画.Parse(System.String)">
+            <summary>
+            Convert from a <see cref="T:System.String"/> .
+            </summary>
+            <param name="s">The string represents the painting.</param>
+            <returns>The painting.</returns>
         </member>
         <member name="T:周易.爻">
             <summary>
-            Represents a line of a hexagram.
+            Represents a line in a hexagram.
             </summary>
+        </member>
+        <member name="P:周易.爻.爻辞">
+            <summary>
+            The meaning of the line.
+            </summary>
+        </member>
+        <member name="P:周易.爻.爻题">
+            <summary>
+            The title of the line.
+            </summary>
+        </member>
+        <member name="T:周易.爻题">
+            <summary>
+            Represents the title of a line.
+            </summary>
+        </member>
+        <member name="P:周易.爻题.Index">
+            <summary>
+            The index of the line. This value is equal to (<see cref="P:周易.爻题.爻位置"/> - 1).
+            </summary>
+        </member>
+        <member name="P:周易.爻题.爻位置">
+            <summary>
+            The position of the line.
+            </summary>
+        </member>
+        <member name="P:周易.爻题.爻阴阳">
+            <summary>
+            The attribute (yin or yang) of the line.
+            </summary>
+        </member>
+        <member name="M:周易.爻题.ToString">
+            <summary>
+            Returns a string that represents the title.
+            </summary>
+            <returns>A string that represents the title.</returns>
         </member>
         <member name="T:周易.经卦">
             <summary>
-            Represents a trigram (a trigram is made up of any combination of three yin and yang lines) .
+            Represents a trigram.
+            </summary>
+        </member>
+        <member name="P:周易.经卦.卦名">
+            <summary>
+            Get the trigram's name.
+            </summary>
+        </member>
+        <member name="P:周易.经卦.自然属性">
+            <summary>
+            Get the nature attribute the trigram represents.
+            </summary>
+        </member>
+        <member name="P:周易.经卦.卦画">
+            <summary>
+            Get the painting of the trigram.
+            </summary>
+        </member>
+        <member name="P:周易.经卦.上爻阴阳">
+            <summary>
+            Get the attribute (yin or yang) of the top (third) line.
+            </summary>
+        </member>
+        <member name="P:周易.经卦.中爻阴阳">
+            <summary>
+            Get the attribute (yin or yang) of the middle (second) line.
+            </summary>
+        </member>
+        <member name="P:周易.经卦.初爻阴阳">
+            <summary>
+            Get the attribute (yin or yang) of the bottom (first) line.
+            </summary>
+        </member>
+        <member name="P:周易.经卦.全部经卦卦名">
+            <summary>
+            Get the names of all trigrams.
+            This is arranged according to the number of innate trigrams -- 
+            1: Ch'ien (Heaven);
+            2: Tui (Lake);
+            3: Li (Fire);
+            4: Chên (Thunder);
+            5: Sun (Wind);
+            6: K'an (Water);
+            7: Kên (Mountain);
+            8: K'un (Earth).
+            </summary>
+        </member>
+        <member name="M:周易.经卦.获取经卦(System.Char)">
+            <summary>
+            Get a trigram from its name.
+            </summary>
+            <param name="卦名">The name.</param>
+            <returns>The trigram.</returns>
+        </member>
+        <member name="M:周易.经卦.获取经卦(周易.卦画)">
+            <summary>
+            Get a trigram from its painting.
+            </summary>
+            <param name="卦画">The painting.</param>
+            <returns>The trigram.</returns>
+        </member>
+        <member name="T:周易.阴阳">
+            <summary>
+            Represents the attribute (yin or yang) of a line.
+            </summary>
+        </member>
+        <member name="F:周易.阴阳.阴">
+            <summary>
+            Represents yin.
+            </summary>
+        </member>
+        <member name="F:周易.阴阳.阳">
+            <summary>
+            Represents yang.
             </summary>
         </member>
     </members>

@@ -11,6 +11,19 @@
   </PropertyGroup>
   <PropertyGroup>
     <DebugType>pdbonly</DebugType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>ZhouyiFramework</PackageId>
+    <Authors>月银秋5990</Authors>
+    <Product>周易Framework</Product>
+    <Description>It's a C# library about I Ching.</Description>
+    <Copyright>Copyright © 2020 月银秋5990. All rights reserved.</Copyright>
+    <Company />
+    <RepositoryUrl>https://github.com/yueyinqiu/ZhouyiFramework.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>太极.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageLicenseFile>license.md</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Resource.Designer.cs">
@@ -25,6 +38,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\license.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\太极.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
