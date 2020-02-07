@@ -73,7 +73,7 @@ namespace 周易
             if (!index.HasValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(卦名),
-                    $"没有找到 {nameof(卦名)} 对应的别卦。应该输入全称，且末尾不带 “卦” 字。");
+                    $"没有找到 {nameof(卦名)}：{卦名} 对应的别卦。应该输入全称，且末尾不带 “卦” 字。");
             }
             return 获取别卦(index.Value, 卦名);
         }
@@ -120,7 +120,7 @@ namespace 周易
             }
             if (卦画.爻数 != 6)
             {
-                throw new ArgumentException($"{nameof(卦画)}不正确。应该为六爻。", nameof(卦画));
+                throw new ArgumentException($"{nameof(卦画)}：{卦画} 不正确。应该为六爻。", nameof(卦画));
             }
             经卦 主卦 = 经卦.获取经卦(new 卦画(false, 卦画[0], 卦画[1], 卦画[2]));
             经卦 客卦 = 经卦.获取经卦(new 卦画(false, 卦画[3], 卦画[4], 卦画[5]));

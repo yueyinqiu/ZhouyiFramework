@@ -489,7 +489,7 @@
         <member name="T:周易.卦画">
             <summary>
             Represents a painting made up by the yin and yang lines.
-            While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="M:周易.卦画.FromByte(System.Byte)"/> and <seealso cref="M:周易.卦画.Parse(System.String)"/> to make your own painting but a painting including more than 7 lines is not allowed.
+            While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="M:周易.卦画.#ctor(周易.阴阳[])"/> , <seealso cref="M:周易.卦画.FromByte(System.Byte)"/> and <seealso cref="M:周易.卦画.Parse(System.String)"/> to make your own painting but a painting including more than 7 lines is not allowed.
             When you use this class as <see cref="T:System.Collections.IEnumerable"/> or <see cref="T:System.Collections.Generic.IEnumerable`1"/> , you will get the lower lines first.
             </summary>
         </member>
@@ -516,6 +516,12 @@
             <summary>
             The count of the lines in the painting.
             </summary>
+        </member>
+        <member name="M:周易.卦画.#ctor(周易.阴阳[])">
+            <summary>
+            Initializes a new instance of <seealso cref="T:周易.卦画"/>.
+            </summary>
+            <param name="各爻阴阳"></param>
         </member>
         <member name="M:周易.卦画.ToByte">
             <summary>
