@@ -24,8 +24,11 @@
     <PackageIcon>太极.png</PackageIcon>
     <PackageIconUrl />
     <PackageLicenseFile>license.md</PackageLicenseFile>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\user\source\repos\ZhouyiFramework\周易Framework\周易\周易.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Resource.Designer.cs">
