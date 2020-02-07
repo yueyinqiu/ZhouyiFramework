@@ -370,6 +370,11 @@
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
+        <member name="P:周易.Resource.经卦自然现象对照">
+            <summary>
+              查找类似 天泽火雷风水山地 的本地化字符串。
+            </summary>
+        </member>
         <member name="T:周易.别卦">
             <summary>
             Represents a hexagram (the divinatory symbol) .
@@ -392,13 +397,18 @@
         </member>
         <member name="P:周易.别卦.用辞">
             <summary>
-            Get the the words after the word "yong" which only exists in "qian" (heaven) and "kun" (earth).
+            Get the the words after the word "yong" which only exists in Ch'ien (Heaven) and K'un (Earth).
             It will returns null if the hexagram isn't "qian" or "kun".
+            </summary>
+        </member>
+        <member name="T:周易.爻">
+            <summary>
+            Represents a line of a hexagram.
             </summary>
         </member>
         <member name="T:周易.经卦">
             <summary>
-            Represents a trigram (the eight diagram) .
+            Represents a trigram (a trigram is made up of any combination of three yin and yang lines) .
             </summary>
         </member>
     </members>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace 周易
 {
-    class Test
+    internal class Test
     {
         private static void Main()
         {

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace 周易
 {
+    /// <summary>
+    /// Represents a line of a hexagram.
+    /// </summary>
     public sealed class 爻
     {
         internal 爻(int 位置, 阴阳 阴阳性质, string 爻辞)

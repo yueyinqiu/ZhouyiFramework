@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-    class 别卦生成器
+    internal class 别卦生成器
     {
         public static void Start()
         {

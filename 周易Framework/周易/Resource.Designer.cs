@@ -756,5 +756,14 @@ namespace 周易 {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   查找类似 天泽火雷风水山地 的本地化字符串。
+        /// </summary>
+        internal static string 经卦自然现象对照 {
+            get {
+                return ResourceManager.GetString("经卦自然现象对照", resourceCulture);
+            }
+        }
     }
 }

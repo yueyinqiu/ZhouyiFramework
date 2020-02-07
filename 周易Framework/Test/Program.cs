@@ -44,12 +44,53 @@ namespace Test
                 int rand = r.Next(0, 63);
                 Console.WriteLine(rand);
                 string 卦名 = 别卦.全部别卦卦名.ToArray()[rand];
-                别卦 卦 = 别卦.获取别卦(卦名);
-                Console.WriteLine($"{卦.卦名}卦 {卦.客卦.卦名}上{卦.主卦.卦名}下");
-                Console.WriteLine(卦.卦辞);
-                foreach(var 爻 in 卦.各爻)
+                仿易经输出(rand + 1, 卦名);
+            }
+            Console.ReadLine();
+        }
+
+        private static void 仿易经输出(int 序数, string 卦名)
+        {
+            别卦 卦 = 别卦.获取别卦(卦名);
+            if (序数 == 8)
+            {
+                // 比卦
+                Console.WriteLine($"第{序数}卦 " +
+                    $"{卦.卦名} " +
+                    $"{卦.客卦.自然现象}{卦.主卦.自然现象}{卦.卦名} " +
+                    $"{卦.客卦.卦名}上下{卦.主卦.卦名}");
+
+            }
+            else if (卦.主卦.卦画.ToByte() == 卦.客卦.卦画.ToByte())
+            {
+                Console.WriteLine($"第{序数}卦 " +
+                    $"{卦.卦名} " +
+                    $"{卦.卦名}为{卦.客卦.自然现象} " +
+                    $"{卦.客卦.卦名}上{卦.主卦.卦名}下");
+            }
+            else
+            {
+                Console.WriteLine($"第{序数}卦 " +
+                    $"{卦.卦名} " +
+                    $"{卦.客卦.自然现象}{卦.主卦.自然现象}{卦.卦名} " +
+                    $"{卦.客卦.卦名}上{卦.主卦.卦名}下");
+            }
+            Console.WriteLine($"{卦.卦名}：{卦.卦辞}");
+            foreach (var 爻 in 卦.各爻)
+            {
+                Console.WriteLine($"{爻.爻题}：{爻.爻辞}");
+            }
+            if (卦.用辞 != null)
+            {
+                if (卦.卦画.ToByte() == 0b01111111)
                 {
-                    Console.WriteLine($"{爻.爻题}：{爻.爻辞}");
+                    // 乾卦
+                    Console.WriteLine($"用九：{卦.用辞}");
+                }
+                else
+                {
+                    // 坤卦
+                    Console.WriteLine($"用六：{卦.用辞}");
                 }
             }
         }

@@ -36,7 +36,7 @@ namespace 周易
         /// </summary>
         public string 卦辞 { get; }
         /// <summary>
-        /// Get the the words after the word "yong" which only exists in "qian" (heaven) and "kun" (earth).
+        /// Get the the words after the word "yong" which only exists in Ch'ien (Heaven) and K'un (Earth).
         /// It will returns null if the hexagram isn't "qian" or "kun".
         /// </summary>
         public string 用辞 { get; }
@@ -45,12 +45,12 @@ namespace 周易
         {
             get
             {
-                yield return 初爻;
-                yield return 二爻;
-                yield return 三爻;
-                yield return 四爻;
-                yield return 五爻;
-                yield return 上爻;
+                yield return this.初爻;
+                yield return this.二爻;
+                yield return this.三爻;
+                yield return this.四爻;
+                yield return this.五爻;
+                yield return this.上爻;
             }
         }
 

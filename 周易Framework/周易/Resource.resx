@@ -328,4 +328,7 @@
   <data name="经卦卦画对照" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\经卦卦画对照;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="经卦自然现象对照" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\经卦自然现象对照;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>
