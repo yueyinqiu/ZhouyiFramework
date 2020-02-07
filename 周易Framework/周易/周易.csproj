@@ -16,17 +16,17 @@
     <PackageId>ZhouyiFramework</PackageId>
     <Authors>月银秋5990</Authors>
     <Product>周易Framework</Product>
-    <Description>It's a C# library about I Ching.</Description>
+    <Description>A C# library about I Ching (Zhouyi, Yijing, 《易经》, 《周易》).</Description>
     <Copyright>Copyright © 2020 月银秋5990. All rights reserved.</Copyright>
     <Company />
     <RepositoryUrl>https://github.com/yueyinqiu/ZhouyiFramework.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <RepositoryType></RepositoryType>
     <PackageIcon>太极.png</PackageIcon>
     <PackageIconUrl />
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <Version>2.0.1</Version>
-    <AssemblyVersion>2.0.1.0</AssemblyVersion>
-    <FileVersion>2.0.1.0</FileVersion>
+    <Version>2.1.0</Version>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>C:\Users\user\source\repos\ZhouyiFramework\周易Framework\周易\周易.xml</DocumentationFile>
