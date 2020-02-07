@@ -41,7 +41,16 @@ namespace 周易
         public byte 爻数 => (byte)this.各爻阴阳.Length;
 
         private 卦画() { }
-        internal 卦画(params 阴阳[] 各爻阴阳)
+        public 卦画(params 阴阳[] 各爻阴阳)
+        {
+            if (各爻阴阳 == null)
+            {
+                this.各爻阴阳 = new 阴阳[0];
+            }
+            this.各爻阴阳 = new 阴阳[各爻阴阳.Length];
+            各爻阴阳.CopyTo(this.各爻阴阳, 0);
+        }
+        internal 卦画(bool _, params 阴阳[] 各爻阴阳)
         {
             this.各爻阴阳 = 各爻阴阳;
         }

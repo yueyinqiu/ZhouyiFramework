@@ -32,7 +32,7 @@ namespace 周易
         /// <summary>
         /// Get the painting of the trigram.
         /// </summary>
-        public 卦画 卦画 => new 卦画(this.初爻阴阳, this.中爻阴阳, this.上爻阴阳);
+        public 卦画 卦画 => new 卦画(false, this.初爻阴阳, this.中爻阴阳, this.上爻阴阳);
         /// <summary>
         /// Get the attribute (yin or yang) of the top (third) line.
         /// </summary>
