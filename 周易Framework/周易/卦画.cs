@@ -6,10 +6,24 @@ using System.Text;
 
 namespace 周易
 {
+    /// <summary>
+    /// Represents a painting made up by the yin and yang lines.
+    /// While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="FromByte(byte)"/> and <seealso cref="Parse(string)"/> to make your own painting.
+    /// But do not make a painting including more than 7 lines, it may lead to abnormal results.
+    /// When you use this class as <see cref="IEnumerable"/> or <see cref="IEnumerable{T}"/> , you will get the lower lines first.
+    /// </summary>
     public sealed class 卦画 : IEnumerable<阴阳>
     {
         private 阴阳[] 各爻阴阳 { get; set; }
-
+        /// <summary>
+        /// Get the attribute (yin or yang) of a line in the painting.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the line you want to get.
+        /// The higher the value is, the upper the line you will get.
+        /// The minimum value is 0.
+        /// </param>
+        /// <returns>The attribute of the line.</returns>
         public 阴阳 this[int index]
         {
             get
@@ -19,8 +33,16 @@ namespace 周易
         }
         IEnumerator IEnumerable.GetEnumerator()
             => this.各爻阴阳.GetEnumerator();
+        /// <summary>
+        /// Returns an enumerator that iterates through the collection.
+        /// When you use this enumerator, you will get the lower lines first.
+        /// </summary>
+        /// <returns>An enumerator that can be used to iterate through the collection.</returns>
         public IEnumerator<阴阳> GetEnumerator()
             => ((IEnumerable<阴阳>)this.各爻阴阳).GetEnumerator();
+        /// <summary>
+        /// The count of the lines in the painting.
+        /// </summary>
         public byte 爻数 => (byte)this.各爻阴阳.Length;
 
         private 卦画() { }
@@ -34,7 +56,11 @@ namespace 周易
                 (from 爻 in 各爻
                  select 爻.爻题.爻阴阳).ToArray();
         }
-
+        /// <summary>
+        /// Convert to a <see cref="byte"/> .
+        /// You can convert it back by using <seealso cref="FromByte(byte)"/> .
+        /// </summary>
+        /// <returns>The byte that can represent this painting.</returns>
         public byte ToByte()
         {
             byte result = 0;
@@ -51,6 +77,11 @@ namespace 周易
             }
             return result;
         }
+        /// <summary>
+        /// Convert from a <see cref="byte"/> .
+        /// </summary>
+        /// <param name="b">The byte that represents this painting.</param>
+        /// <returns>The painting.</returns>
         public static 卦画 FromByte(byte b)
         {
             BitArray bitArray = new BitArray(new byte[] { b });
@@ -71,6 +102,11 @@ namespace 周易
                 各爻阴阳 = r.ToArray()
             };
         }
+        /// <summary>
+        /// Returns a string that represents the painting.
+        /// You can use <seealso cref="Parse(string)"/> to convert it back.
+        /// </summary>
+        /// <returns>The string.</returns>
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder(6);
@@ -80,6 +116,11 @@ namespace 周易
             }
             return stringBuilder.ToString();
         }
+        /// <summary>
+        /// Convert from a <see cref="string"/> .
+        /// </summary>
+        /// <param name="s">The string represents the painting.</param>
+        /// <returns>The painting.</returns>
         public static 卦画 Parse(string s)
         {
             if (s == null)

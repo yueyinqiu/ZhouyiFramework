@@ -6,7 +6,7 @@ using System.Text;
 namespace 周易
 {
     /// <summary>
-    /// Represents a trigram (a trigram is made up of any combination of three yin and yang lines) .
+    /// Represents a trigram.
     /// </summary>
     public sealed partial class 经卦
     {
@@ -14,18 +14,36 @@ namespace 周易
         {
             this.Index = index;
             this.卦名 = 卦名;
-            this.自然现象 = 自然现象;
+            this.自然属性 = 自然现象;
             阴阳[] 各爻阴阳 = 卦画.ToArray();
             this.初爻阴阳 = 各爻阴阳[0];
             this.中爻阴阳 = 各爻阴阳[1];
             this.上爻阴阳 = 各爻阴阳[2];
         }
         internal byte Index { get; }
+        /// <summary>
+        /// Get the trigram's name.
+        /// </summary>
         public char 卦名 { get; }
-        public char 自然现象 { get; }
+        /// <summary>
+        /// Get the nature attribute the trigram represents.
+        /// </summary>
+        public char 自然属性 { get; }
+        /// <summary>
+        /// Get the painting of the trigram.
+        /// </summary>
         public 卦画 卦画 => new 卦画(this.初爻阴阳, this.中爻阴阳, this.上爻阴阳);
+        /// <summary>
+        /// Get the attribute (yin or yang) of the top (third) line.
+        /// </summary>
         public 阴阳 上爻阴阳 { get; }
+        /// <summary>
+        /// Get the attribute (yin or yang) of the middle (second) line.
+        /// </summary>
         public 阴阳 中爻阴阳 { get; }
+        /// <summary>
+        /// Get the attribute (yin or yang) of the bottom (first) line.
+        /// </summary>
         public 阴阳 初爻阴阳 { get; }
     }
 }

@@ -8,6 +8,10 @@ namespace 周易
 {
     public sealed partial class 别卦
     {
+        /// <summary>
+        /// Get the names of all hexagrams.
+        /// This is arranged according to I Ching (I don't want to list it, buy the book and you will know it).
+        /// </summary>
         public static IEnumerable<string> 全部别卦卦名
         {
             get
@@ -32,7 +36,11 @@ namespace 周易
                 }
             }
         }
-
+        /// <summary>
+        /// Get a hexagram from its name.
+        /// </summary>
+        /// <param name="卦名">The name.</param>
+        /// <returns>The hexagram.</returns>
         public static 别卦 获取别卦(string 卦名)
         {
             byte? index = null;
@@ -63,6 +71,12 @@ namespace 周易
             }
             return 获取别卦(index.Value, 卦名);
         }
+        /// <summary>
+        /// Get a hexagram from its two trigrams.
+        /// </summary>
+        /// <param name="主卦">The lower trigram.</param>
+        /// <param name="客卦">The upper trigram.</param>
+        /// <returns>The hexagram.</returns>
         public static 别卦 获取别卦(经卦 主卦, 经卦 客卦)
         {
             byte index;
@@ -73,6 +87,11 @@ namespace 周易
             }
             return 获取别卦(index, 主卦, 客卦);
         }
+        /// <summary>
+        /// Get a hexagram from its painting.
+        /// </summary>
+        /// <param name="卦画">The painting.</param>
+        /// <returns>The hexagram.</returns>
         public static 别卦 获取别卦(卦画 卦画)
         {
             if (卦画.爻数 != 6)

@@ -7,10 +7,26 @@ namespace 周易
 {
     public sealed partial class 经卦
     {
+        /// <summary>
+        /// Get the names of all trigrams.
+        /// This is arranged according to the number of innate trigrams -- 
+        /// 1: Ch'ien (Heaven);
+        /// 2: Tui (Lake);
+        /// 3: Li (Fire);
+        /// 4: Chên (Thunder);
+        /// 5: Sun (Wind);
+        /// 6: K'an (Water);
+        /// 7: Kên (Mountain);
+        /// 8: K'un (Earth).
+        /// </summary>
         public static IEnumerable<char> 全部经卦卦名
             => Resource.经卦卦名对照;
 
-
+        /// <summary>
+        /// Get a trigram from its name.
+        /// </summary>
+        /// <param name="卦名">The name.</param>
+        /// <returns>The trigram.</returns>
         public static 经卦 获取经卦(char 卦名)
         {
             var all = Resource.经卦卦名对照;
@@ -22,6 +38,11 @@ namespace 周易
             byte index = (byte)intIndex;
             return new 经卦(index, 卦名, 获取卦对应的自然现象(index), 获取卦画(index));
         }
+        /// <summary>
+        /// Get a trigram from its painting.
+        /// </summary>
+        /// <param name="卦画">The painting.</param>
+        /// <returns>The trigram.</returns>
         public static 经卦 获取经卦(卦画 卦画)
         {
             byte? index = null;
