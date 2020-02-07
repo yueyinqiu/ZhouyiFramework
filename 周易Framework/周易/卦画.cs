@@ -8,8 +8,7 @@ namespace 周易
 {
     /// <summary>
     /// Represents a painting made up by the yin and yang lines.
-    /// While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="FromByte(byte)"/> and <seealso cref="Parse(string)"/> to make your own painting.
-    /// But do not make a painting including more than 7 lines, it may lead to abnormal results.
+    /// While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="FromByte(byte)"/> and <seealso cref="Parse(string)"/> to make your own painting but a painting including more than 7 lines is not allowed.
     /// When you use this class as <see cref="IEnumerable"/> or <see cref="IEnumerable{T}"/> , you will get the lower lines first.
     /// </summary>
     public sealed class 卦画 : IEnumerable<阴阳>
@@ -24,13 +23,9 @@ namespace 周易
         /// The minimum value is 0.
         /// </param>
         /// <returns>The attribute of the line.</returns>
+        /// <exception cref="IndexOutOfRangeException"> <paramref name="index"/> is out of range.</exception>
         public 阴阳 this[int index]
-        {
-            get
-            {
-                return this.各爻阴阳[index];
-            }
-        }
+            => this.各爻阴阳[index];
         IEnumerator IEnumerable.GetEnumerator()
             => this.各爻阴阳.GetEnumerator();
         /// <summary>
@@ -119,20 +114,29 @@ namespace 周易
         /// <summary>
         /// Convert from a <see cref="string"/> .
         /// </summary>
-        /// <param name="s">The string represents the painting.</param>
+        /// <param name="s">
+        /// The string represents the painting.
+        /// Its property <see cref="string.Length"/> should be less than 8 and only digits are allowed.
+        /// </param>
         /// <returns>The painting.</returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="s"/> is null.</exception>
+        /// <exception cref="FormatException"> <paramref name="s"/> is not in the correct format.</exception>
         public static 卦画 Parse(string s)
         {
             if (s == null)
             {
                 throw new ArgumentNullException(nameof(s));
             }
+            if(s.Length > 7)
+            {
+                throw new FormatException($"{nameof(s)}的格式不正确。其长度不允许超过 7。");
+            }
             List<阴阳> r = new List<阴阳>(6);
             foreach (var c in s)
             {
                 if (c < '0' || c > '9')
                 {
-                    throw new ArgumentException($"{nameof(s)}的内容不正确。只允许出现数字字符。", nameof(s));
+                    throw new FormatException($"{nameof(s)}的格式不正确。只允许出现数字字符。");
                 }
                 r.Add(c % 2 == 0 ? 阴阳.阴 : 阴阳.阳);
             }

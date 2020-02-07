@@ -39,8 +39,13 @@ namespace 周易
         /// <summary>
         /// Get a hexagram from its name.
         /// </summary>
-        /// <param name="卦名">The name.</param>
+        /// <param name="卦名">
+        /// The name.
+        /// The value shouldn't end with '卦'.
+        /// </param>
         /// <returns>The hexagram.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">No such hexagram was found.</exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="卦名"/> is null.</exception>
         public static 别卦 获取别卦(string 卦名)
         {
             byte? index = null;
@@ -67,7 +72,8 @@ namespace 周易
             }
             if (!index.HasValue)
             {
-                throw new ArgumentOutOfRangeException(nameof(卦名));
+                throw new ArgumentOutOfRangeException(nameof(卦名),
+                    $"没有找到 {nameof(卦名)} 对应的别卦。应该输入全称，且末尾不带 “卦” 字。");
             }
             return 获取别卦(index.Value, 卦名);
         }
@@ -77,8 +83,17 @@ namespace 周易
         /// <param name="主卦">The lower trigram.</param>
         /// <param name="客卦">The upper trigram.</param>
         /// <returns>The hexagram.</returns>
+        /// <exception cref="ArgumentNullException">At least one argument is null.</exception>
         public static 别卦 获取别卦(经卦 主卦, 经卦 客卦)
         {
+            if (主卦 == null)
+            {
+                throw new ArgumentNullException(nameof(主卦));
+            }
+            if (客卦 == null)
+            {
+                throw new ArgumentNullException(nameof(客卦));
+            }
             byte index;
             using (var ms = new MemoryStream(Resource.别卦经卦对照))
             {
@@ -90,10 +105,19 @@ namespace 周易
         /// <summary>
         /// Get a hexagram from its painting.
         /// </summary>
-        /// <param name="卦画">The painting.</param>
+        /// <param name="卦画">
+        /// The painting.
+        /// Its property <see cref="卦画.爻数"/> should be 6.
+        /// </param>
         /// <returns>The hexagram.</returns>
+        /// <exception cref="ArgumentException"> <see cref="卦画.爻数"/> of <paramref name="卦画"/> isn't 6.</exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="卦画"/> is null.</exception>
         public static 别卦 获取别卦(卦画 卦画)
         {
+            if (卦画 == null)
+            {
+                throw new ArgumentNullException(nameof(卦画));
+            }
             if (卦画.爻数 != 6)
             {
                 throw new ArgumentException($"{nameof(卦画)}不正确。应该为六爻。", nameof(卦画));

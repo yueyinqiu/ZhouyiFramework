@@ -27,6 +27,7 @@ namespace 周易
         /// </summary>
         /// <param name="卦名">The name.</param>
         /// <returns>The trigram.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">No such trigram was found.</exception>
         public static 经卦 获取经卦(char 卦名)
         {
             var all = Resource.经卦卦名对照;
@@ -41,11 +42,24 @@ namespace 周易
         /// <summary>
         /// Get a trigram from its painting.
         /// </summary>
-        /// <param name="卦画">The painting.</param>
+        /// <param name="卦画">
+        /// The painting.
+        /// Its property <see cref="卦画.爻数"/> should be 3.
+        /// </param>
         /// <returns>The trigram.</returns>
+        /// <exception cref="ArgumentException"> <see cref="卦画.爻数"/> of <paramref name="卦画"/> isn't 3.</exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="卦画"/> is null.</exception>
         public static 经卦 获取经卦(卦画 卦画)
         {
-            byte? index = null;
+            if(卦画 == null)
+            {
+                throw new ArgumentNullException(nameof(卦画));
+            }
+            if(卦画.爻数 != 3)
+            {
+                throw new ArgumentException($"{nameof(卦画)}不正确。应该为三爻。", nameof(卦画));
+            }
+            byte index = default;
             using (var ms = new MemoryStream(Resource.经卦卦画对照))
             {
                 var b = 卦画.ToByte();
@@ -58,12 +72,7 @@ namespace 周易
                     }
                 }
             }
-            if (!index.HasValue)
-            {
-                throw new ArgumentOutOfRangeException(nameof(卦画));
-            }
-            return new 经卦(
-                index.Value, 获取卦名(index.Value), 获取卦对应的自然现象(index.Value), 卦画);
+            return new 经卦(index, 获取卦名(index), 获取卦对应的自然现象(index), 卦画);
         }
         internal static 经卦 获取经卦(byte index)
         {
