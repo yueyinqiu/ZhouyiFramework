@@ -11,7 +11,7 @@ namespace 周易
     /// While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="卦画(阴阳[])"/> , <seealso cref="FromByte(byte)"/> and <seealso cref="Parse(string)"/> to make your own painting but a painting including more than 7 lines is not allowed.
     /// When you use this class as <see cref="IEnumerable"/> or <see cref="IEnumerable{T}"/> , you will get the lower lines first.
     /// </summary>
-    public sealed class 卦画 : IEnumerable<阴阳>
+    public sealed class 卦画 : IEnumerable<阴阳>, IComparable<卦画>, IEquatable<卦画>
     {
         private 阴阳[] 各爻阴阳 { get; set; }
         /// <summary>
@@ -140,7 +140,7 @@ namespace 周易
             {
                 throw new ArgumentNullException(nameof(s));
             }
-            if(s.Length > 7)
+            if (s.Length > 7)
             {
                 throw new FormatException($"{nameof(s)}的格式不正确。其长度不允许超过 7。");
             }
@@ -156,6 +156,78 @@ namespace 周易
             return new 卦画() {
                 各爻阴阳 = r.ToArray()
             };
+        }
+
+        /// <summary>
+        /// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+        /// </summary>
+        /// <param name="other">An object to compare with this instance.</param>
+        /// <returns>A value that indicates the relative order of the objects being compared.</returns>
+        public int CompareTo(卦画 other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+            return this.ToByte().CompareTo(other.ToByte());
+        }
+        /// <summary>
+        /// Returns a value indicating whether this instance is equal to a specified object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance, or null.</param>
+        /// <returns>true if obj is an instance of System.Byte and equals the value of this instance; otherwise, false.</returns>
+        public override bool Equals(object obj)
+        {
+            if (obj is 卦画 画)
+            {
+                return this.ToByte().Equals(画.ToByte());
+            }
+            return false;
+        }
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for the current <see cref="卦画"/>.</returns>
+        public override int GetHashCode()
+        {
+            return this.ToByte();
+        }
+        /// <summary>
+        /// Returns a value indicating whether this instance and a specified <see cref="卦画"/> object represent the same value.
+        /// </summary>
+        /// <param name="other">An object to compare to this instance.</param>
+        /// <returns>true if obj is equal to this instance; otherwise, false.</returns>
+        public bool Equals(卦画 other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            return this.ToByte().Equals(other.ToByte());
+        }
+
+#warning 没有注释。
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        public static bool operator ==(卦画 left, 卦画 right)
+        {
+            return left?.ToByte() == right?.ToByte();
+        }
+
+#warning 没有注释。
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        public static bool operator !=(卦画 left, 卦画 right)
+        {
+            return left?.ToByte() != right?.ToByte();
         }
     }
 }

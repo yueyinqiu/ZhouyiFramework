@@ -207,7 +207,7 @@ namespace 周易
             {
                 用辞 = Resource.坤卦用辞;
             }
-            return new 别卦(卦名, 卦辞, 用辞, 各爻);
+            return new 别卦(index,卦名, 卦辞, 用辞, 各爻);
         }
         private static 别卦 获取别卦(byte index, string 卦名)
         {
@@ -276,7 +276,7 @@ namespace 周易
             {
                 用辞 = Resource.坤卦用辞;
             }
-            return new 别卦(卦名, 卦辞, 用辞, 各爻);
+            return new 别卦(index, 卦名, 卦辞, 用辞, 各爻);
         }
     }
 }
