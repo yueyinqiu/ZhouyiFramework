@@ -4,7 +4,7 @@
         <name>周易</name>
     </assembly>
     <members>
-        <member name="T:周易.Resource">
+        <member name="T:周易.Properties.Resources">
             <summary>
               一个强类型的资源类，用于查找本地化的字符串等。
             </summary>
