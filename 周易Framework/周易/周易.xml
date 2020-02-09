@@ -380,6 +380,12 @@
             Represents a hexagram.
             </summary>
         </member>
+        <member name="P:周易.别卦.易经序号">
+            <summary>
+            Get the position of the hexagram in I Ching.
+            The value ranges from 1 to 64. 
+            </summary>
+        </member>
         <member name="P:周易.别卦.卦画">
             <summary>
             Get the painting of the hexagram.
@@ -446,6 +452,12 @@
             <summary>
             Get the bottom (first) line.
             </summary>
+        </member>
+        <member name="M:周易.别卦.ToString">
+            <summary>
+            Returns the text similar to the text of the current <see cref="T:周易.别卦"/> in I Ching.
+            </summary>
+            <returns>The text.</returns>
         </member>
         <member name="P:周易.别卦.全部别卦卦名">
             <summary>
@@ -555,6 +567,49 @@
             <returns>The painting.</returns>
             <exception cref="T:System.ArgumentNullException"> <paramref name="s"/> is null.</exception>
             <exception cref="T:System.FormatException"> <paramref name="s"/> is not in the correct format.</exception>
+        </member>
+        <member name="M:周易.卦画.CompareTo(周易.卦画)">
+            <summary>
+            Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+            </summary>
+            <param name="other">An object to compare with this instance.</param>
+            <returns>A value that indicates the relative order of the objects being compared.</returns>
+        </member>
+        <member name="M:周易.卦画.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="obj">An object to compare with this instance, or null.</param>
+            <returns>true if obj is an instance of System.Byte and equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:周易.卦画.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A hash code for the current <see cref="T:周易.卦画"/>.</returns>
+        </member>
+        <member name="M:周易.卦画.Equals(周易.卦画)">
+            <summary>
+            Returns a value indicating whether this instance and a specified <see cref="T:周易.卦画"/> object represent the same value.
+            </summary>
+            <param name="other">An object to compare to this instance.</param>
+            <returns>true if obj is equal to this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:周易.卦画.op_Equality(周易.卦画,周易.卦画)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:周易.卦画.op_Inequality(周易.卦画,周易.卦画)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
         </member>
         <member name="T:周易.爻">
             <summary>

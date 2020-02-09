@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
+using System.Text;
 
 namespace 周易
 {
@@ -107,5 +108,52 @@ namespace 周易
         /// </summary>
         public 爻 初爻 { get; }
         #endregion
+
+        /// <summary>
+        /// Returns the text similar to the text of the current <see cref="别卦"/> in I Ching.
+        /// </summary>
+        /// <returns>The text.</returns>
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder(800);
+            stringBuilder.Append($"第{this.易经序号}卦 {this.卦名} ");
+            if(this.主卦.卦画 == this.客卦.卦画)
+            {
+                stringBuilder.Append($"{this.卦名}为{this.客卦.自然属性} ");
+            }
+            else
+            {
+                stringBuilder.Append($"{this.客卦.自然属性}{this.主卦.自然属性}{this.卦名} ");
+            }
+            if(this.易经序号 == 8)
+            {
+                // 比卦
+                stringBuilder.AppendLine($"{this.客卦.卦名}上下{this.主卦.卦名}");
+            }
+            else
+            {
+                stringBuilder.AppendLine($"{this.客卦.卦名}上{this.主卦.卦名}下");
+            }
+            stringBuilder.AppendLine($"{this.卦名}：{this.卦辞}");
+            foreach (var 爻 in this.各爻)
+            {
+                stringBuilder.AppendLine($"{爻.爻题}：{爻.爻辞}");
+            }
+            if (this.用辞 != null)
+            {
+                if (this.易经序号 == 1)
+                {
+                    // 乾卦
+                    stringBuilder.AppendLine($"用九：{this.用辞}");
+                }
+                else
+                {
+                    // 坤卦
+                    stringBuilder.AppendLine($"用六：{this.用辞}");
+                }
+            }
+            stringBuilder.Remove(stringBuilder.Length - 1, 1);
+            return stringBuilder.ToString();
+        }
     }
 }
