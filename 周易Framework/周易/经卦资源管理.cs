@@ -20,7 +20,7 @@ namespace 周易
         /// 8: K'un (Earth).
         /// </summary>
         public static IEnumerable<char> 全部经卦卦名
-            => Resource.经卦卦名对照;
+            => Properties.Resources.经卦卦名对照;
 
         /// <summary>
         /// Get a trigram from its name.
@@ -30,7 +30,7 @@ namespace 周易
         /// <exception cref="ArgumentOutOfRangeException">No such trigram was found.</exception>
         public static 经卦 获取经卦(char 卦名)
         {
-            var all = Resource.经卦卦名对照;
+            var all = Properties.Resources.经卦卦名对照;
             var intIndex = all.IndexOf(卦名);
             if (intIndex == -1)
             {
@@ -61,7 +61,7 @@ namespace 周易
                 throw new ArgumentException($"{nameof(卦画)}：{卦画} 不正确。应该为三爻。", nameof(卦画));
             }
             byte index = default;
-            using (var ms = new MemoryStream(Resource.经卦卦画对照))
+            using (var ms = new MemoryStream(Properties.Resources.经卦卦画对照))
             {
                 var b = 卦画.ToByte();
                 for (byte i = 0; i < 8; i++)
@@ -80,13 +80,13 @@ namespace 周易
             return new 经卦(index, 获取卦名(index), 获取卦对应的自然现象(index), 获取卦画(index));
         }
         private static char 获取卦名(byte index)
-            => Resource.经卦卦名对照[index];
+            => Properties.Resources.经卦卦名对照[index];
         private static char 获取卦对应的自然现象(byte index)
-            => Resource.经卦自然现象对照[index];
+            => Properties.Resources.经卦自然现象对照[index];
         private static 卦画 获取卦画(byte index)
         {
             byte b;
-            using (var ms = new MemoryStream(Resource.经卦卦画对照))
+            using (var ms = new MemoryStream(Properties.Resources.经卦卦画对照))
             {
                 ms.Position = index;
                 b = (byte)ms.ReadByte();

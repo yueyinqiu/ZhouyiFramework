@@ -115,7 +115,7 @@ namespace 周易
         /// <returns>The text.</returns>
         public override string ToString()
         {
-            StringBuilder stringBuilder = new StringBuilder(800);
+            StringBuilder stringBuilder = new StringBuilder(180);
             stringBuilder.Append($"第{this.易经序号}卦 {this.卦名} ");
             if(this.主卦.卦画 == this.客卦.卦画)
             {

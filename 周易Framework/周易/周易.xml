@@ -9,368 +9,368 @@
               一个强类型的资源类，用于查找本地化的字符串等。
             </summary>
         </member>
-        <member name="P:周易.Resource.ResourceManager">
+        <member name="P:周易.Properties.Resources.ResourceManager">
             <summary>
               返回此类使用的缓存的 ResourceManager 实例。
             </summary>
         </member>
-        <member name="P:周易.Resource.Culture">
+        <member name="P:周易.Properties.Resources.Culture">
             <summary>
               重写当前线程的 CurrentUICulture 属性
               重写当前线程的 CurrentUICulture 属性。
             </summary>
         </member>
-        <member name="P:周易.Resource.G0">
+        <member name="P:周易.Properties.Resources.G0">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G1">
+        <member name="P:周易.Properties.Resources.G1">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G10">
+        <member name="P:周易.Properties.Resources.G10">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G11">
+        <member name="P:周易.Properties.Resources.G11">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G12">
+        <member name="P:周易.Properties.Resources.G12">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G13">
+        <member name="P:周易.Properties.Resources.G13">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G14">
+        <member name="P:周易.Properties.Resources.G14">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G15">
+        <member name="P:周易.Properties.Resources.G15">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G16">
+        <member name="P:周易.Properties.Resources.G16">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G17">
+        <member name="P:周易.Properties.Resources.G17">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G18">
+        <member name="P:周易.Properties.Resources.G18">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G19">
+        <member name="P:周易.Properties.Resources.G19">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G2">
+        <member name="P:周易.Properties.Resources.G2">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G20">
+        <member name="P:周易.Properties.Resources.G20">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G21">
+        <member name="P:周易.Properties.Resources.G21">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G22">
+        <member name="P:周易.Properties.Resources.G22">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G23">
+        <member name="P:周易.Properties.Resources.G23">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G24">
+        <member name="P:周易.Properties.Resources.G24">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G25">
+        <member name="P:周易.Properties.Resources.G25">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G26">
+        <member name="P:周易.Properties.Resources.G26">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G27">
+        <member name="P:周易.Properties.Resources.G27">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G28">
+        <member name="P:周易.Properties.Resources.G28">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G29">
+        <member name="P:周易.Properties.Resources.G29">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G3">
+        <member name="P:周易.Properties.Resources.G3">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G30">
+        <member name="P:周易.Properties.Resources.G30">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G31">
+        <member name="P:周易.Properties.Resources.G31">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G32">
+        <member name="P:周易.Properties.Resources.G32">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G33">
+        <member name="P:周易.Properties.Resources.G33">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G34">
+        <member name="P:周易.Properties.Resources.G34">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G35">
+        <member name="P:周易.Properties.Resources.G35">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G36">
+        <member name="P:周易.Properties.Resources.G36">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G37">
+        <member name="P:周易.Properties.Resources.G37">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G38">
+        <member name="P:周易.Properties.Resources.G38">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G39">
+        <member name="P:周易.Properties.Resources.G39">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G4">
+        <member name="P:周易.Properties.Resources.G4">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G40">
+        <member name="P:周易.Properties.Resources.G40">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G41">
+        <member name="P:周易.Properties.Resources.G41">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G42">
+        <member name="P:周易.Properties.Resources.G42">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G43">
+        <member name="P:周易.Properties.Resources.G43">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G44">
+        <member name="P:周易.Properties.Resources.G44">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G45">
+        <member name="P:周易.Properties.Resources.G45">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G46">
+        <member name="P:周易.Properties.Resources.G46">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G47">
+        <member name="P:周易.Properties.Resources.G47">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G48">
+        <member name="P:周易.Properties.Resources.G48">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G49">
+        <member name="P:周易.Properties.Resources.G49">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G5">
+        <member name="P:周易.Properties.Resources.G5">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G50">
+        <member name="P:周易.Properties.Resources.G50">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G51">
+        <member name="P:周易.Properties.Resources.G51">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G52">
+        <member name="P:周易.Properties.Resources.G52">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G53">
+        <member name="P:周易.Properties.Resources.G53">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G54">
+        <member name="P:周易.Properties.Resources.G54">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G55">
+        <member name="P:周易.Properties.Resources.G55">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G56">
+        <member name="P:周易.Properties.Resources.G56">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G57">
+        <member name="P:周易.Properties.Resources.G57">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G58">
+        <member name="P:周易.Properties.Resources.G58">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G59">
+        <member name="P:周易.Properties.Resources.G59">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G6">
+        <member name="P:周易.Properties.Resources.G6">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G60">
+        <member name="P:周易.Properties.Resources.G60">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G61">
+        <member name="P:周易.Properties.Resources.G61">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G62">
+        <member name="P:周易.Properties.Resources.G62">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G63">
+        <member name="P:周易.Properties.Resources.G63">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G7">
+        <member name="P:周易.Properties.Resources.G7">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G8">
+        <member name="P:周易.Properties.Resources.G8">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.G9">
+        <member name="P:周易.Properties.Resources.G9">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.乾卦用辞">
+        <member name="P:周易.Properties.Resources.乾卦用辞">
             <summary>
               查找类似 见群龙无首，吉。 的本地化字符串。
             </summary>
         </member>
-        <member name="P:周易.Resource.别卦卦名对照">
+        <member name="P:周易.Properties.Resources.别卦卦名对照">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.别卦经卦对照">
+        <member name="P:周易.Properties.Resources.别卦经卦对照">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.坤卦用辞">
+        <member name="P:周易.Properties.Resources.坤卦用辞">
             <summary>
               查找类似 利永贞。 的本地化字符串。
             </summary>
         </member>
-        <member name="P:周易.Resource.经卦卦名对照">
+        <member name="P:周易.Properties.Resources.经卦卦名对照">
             <summary>
               查找类似 乾兑离震巽坎艮坤 的本地化字符串。
             </summary>
         </member>
-        <member name="P:周易.Resource.经卦卦画对照">
+        <member name="P:周易.Properties.Resources.经卦卦画对照">
             <summary>
               查找 System.Byte[] 类型的本地化资源。
             </summary>
         </member>
-        <member name="P:周易.Resource.经卦自然现象对照">
+        <member name="P:周易.Properties.Resources.经卦自然现象对照">
             <summary>
               查找类似 天泽火雷风水山地 的本地化字符串。
             </summary>

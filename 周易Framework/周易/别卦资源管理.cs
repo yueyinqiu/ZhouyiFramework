@@ -16,7 +16,7 @@ namespace 周易
         {
             get
             {
-                using (var ms = new MemoryStream(Resource.别卦卦名对照))
+                using (var ms = new MemoryStream(Properties.Resources.别卦卦名对照))
                 {
                     for (byte r = 0; r < 64; r++)
                     {
@@ -49,7 +49,7 @@ namespace 周易
         public static 别卦 获取别卦(string 卦名)
         {
             byte? index = null;
-            using (var ms = new MemoryStream(Resource.别卦卦名对照))
+            using (var ms = new MemoryStream(Properties.Resources.别卦卦名对照))
             {
                 for (byte r = 0; r < 64; r++)
                 {
@@ -95,7 +95,7 @@ namespace 周易
                 throw new ArgumentNullException(nameof(客卦));
             }
             byte index;
-            using (var ms = new MemoryStream(Resource.别卦经卦对照))
+            using (var ms = new MemoryStream(Properties.Resources.别卦经卦对照))
             {
                 ms.Position = 客卦.Index * 8 + 主卦.Index;
                 index = (byte)ms.ReadByte();
@@ -130,7 +130,7 @@ namespace 周易
         private static 别卦 获取别卦(byte index, 经卦 主卦, 经卦 客卦)
         {
             string 卦名;
-            using (var ms = new MemoryStream(Resource.别卦卦名对照))
+            using (var ms = new MemoryStream(Properties.Resources.别卦卦名对照))
             {
                 for (byte r = 0; r < index; r++)
                 {
@@ -158,7 +158,7 @@ namespace 周易
 
             string 卦辞;
             爻[] 各爻 = new 爻[6];
-            using (var str = new MemoryStream((byte[])Resource.ResourceManager.GetObject($"G{index}")))
+            using (var str = new MemoryStream((byte[])Properties.Resources.ResourceManager.GetObject($"G{index}")))
             {
                 {
                     List<byte> bytes = new List<byte>(100);
@@ -201,11 +201,11 @@ namespace 周易
             string 用辞 = null;
             if (index == 0)
             {
-                用辞 = Resource.乾卦用辞;
+                用辞 = Properties.Resources.乾卦用辞;
             }
             if (index == 1)
             {
-                用辞 = Resource.坤卦用辞;
+                用辞 = Properties.Resources.坤卦用辞;
             }
             return new 别卦(index,卦名, 卦辞, 用辞, 各爻);
         }
@@ -213,7 +213,7 @@ namespace 周易
         {
             经卦 主卦 = null;
             经卦 客卦 = null;
-            using (var ms = new MemoryStream(Resource.别卦经卦对照))
+            using (var ms = new MemoryStream(Properties.Resources.别卦经卦对照))
             {
                 for (byte i = 0; i < 64; i++)
                 {
@@ -227,7 +227,7 @@ namespace 周易
 
             string 卦辞;
             爻[] 各爻 = new 爻[6];
-            using (var str = new MemoryStream((byte[])Resource.ResourceManager.GetObject($"G{index}")))
+            using (var str = new MemoryStream((byte[])Properties.Resources.ResourceManager.GetObject($"G{index}")))
             {
                 {
                     List<byte> bytes = new List<byte>(100);
@@ -270,11 +270,11 @@ namespace 周易
             string 用辞 = null;
             if (index == 0)
             {
-                用辞 = Resource.乾卦用辞;
+                用辞 = Properties.Resources.乾卦用辞;
             }
             if (index == 1)
             {
-                用辞 = Resource.坤卦用辞;
+                用辞 = Properties.Resources.坤卦用辞;
             }
             return new 别卦(index, 卦名, 卦辞, 用辞, 各爻);
         }
