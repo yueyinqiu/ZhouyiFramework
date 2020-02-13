@@ -17,8 +17,7 @@ namespace 周易
             get
             {
                 using (var ms = new MemoryStream(Properties.Resources.别卦卦名对照))
-                {
-                    for (byte r = 0; r < 64; r++)
+                    for (int r = 0; r < 64; r++)
                     {
                         List<byte> bytes = new List<byte>(8);
                         for (; ; )
@@ -33,7 +32,6 @@ namespace 周易
                         var str = Encoding.UTF8.GetString(bytes.ToArray());
                         yield return str;
                     }
-                }
             }
         }
         /// <summary>
@@ -48,10 +46,10 @@ namespace 周易
         /// <exception cref="ArgumentNullException"> <paramref name="卦名"/> is null.</exception>
         public static 别卦 获取别卦(string 卦名)
         {
-            byte? index = null;
+            int index = -1;
             using (var ms = new MemoryStream(Properties.Resources.别卦卦名对照))
             {
-                for (byte r = 0; r < 64; r++)
+                for (int r = 0; r < 64; r++)
                 {
                     List<byte> bytes = new List<byte>(8);
                     for (; ; )
@@ -70,12 +68,12 @@ namespace 周易
                     }
                 }
             }
-            if (!index.HasValue)
+            if (index == -1)
             {
                 throw new ArgumentOutOfRangeException(nameof(卦名),
                     $"没有找到 {nameof(卦名)}：{卦名} 对应的别卦。应该输入全称，且末尾不带 “卦” 字。");
             }
-            return 获取别卦(index.Value, 卦名);
+            return 获取别卦(index, 卦名);
         }
         /// <summary>
         /// Get a hexagram from its two trigrams.
@@ -94,11 +92,11 @@ namespace 周易
             {
                 throw new ArgumentNullException(nameof(客卦));
             }
-            byte index;
+            int index;
             using (var ms = new MemoryStream(Properties.Resources.别卦经卦对照))
             {
                 ms.Position = 客卦.Index * 8 + 主卦.Index;
-                index = (byte)ms.ReadByte();
+                index = ms.ReadByte();
             }
             return 获取别卦(index, 主卦, 客卦);
         }
@@ -127,7 +125,7 @@ namespace 周易
             return 获取别卦(主卦, 客卦);
         }
 
-        private static 别卦 获取别卦(byte index, 经卦 主卦, 经卦 客卦)
+        private static 别卦 获取别卦(int index, 经卦 主卦, 经卦 客卦)
         {
             string 卦名;
             using (var ms = new MemoryStream(Properties.Resources.别卦卦名对照))
@@ -173,7 +171,7 @@ namespace 周易
                     }
                     卦辞 = Encoding.UTF8.GetString(bytes.ToArray());
                 }
-                for (byte i = 0; i < 6; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     List<byte> bytes = new List<byte>(100);
                     for (; ; )
@@ -209,18 +207,18 @@ namespace 周易
             }
             return new 别卦(index,卦名, 卦辞, 用辞, 各爻);
         }
-        private static 别卦 获取别卦(byte index, string 卦名)
+        private static 别卦 获取别卦(int index, string 卦名)
         {
             经卦 主卦 = null;
             经卦 客卦 = null;
             using (var ms = new MemoryStream(Properties.Resources.别卦经卦对照))
             {
-                for (byte i = 0; i < 64; i++)
+                for (int i = 0; i < 64; i++)
                 {
                     if (ms.ReadByte() == index)
                     {
-                        主卦 = 经卦.获取经卦((byte)(i % 8));
-                        客卦 = 经卦.获取经卦((byte)(i / 8));
+                        主卦 = 经卦.获取经卦(i % 8);
+                        客卦 = 经卦.获取经卦(i / 8);
                     }
                 }
             }
@@ -242,7 +240,7 @@ namespace 周易
                     }
                     卦辞 = Encoding.UTF8.GetString(bytes.ToArray());
                 }
-                for (byte i = 0; i < 6; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     List<byte> bytes = new List<byte>(100);
                     for (; ; )

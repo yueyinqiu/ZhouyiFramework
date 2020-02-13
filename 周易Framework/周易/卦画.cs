@@ -38,7 +38,7 @@ namespace 周易
         /// <summary>
         /// The count of the lines in the painting.
         /// </summary>
-        public byte 爻数 => (byte)this.各爻阴阳.Length;
+        public int 爻数 => this.各爻阴阳.Length;
 
         private 卦画() { }
         /// <summary>
@@ -71,8 +71,8 @@ namespace 周易
         /// <returns>The byte that can represent this painting.</returns>
         public byte ToByte()
         {
-            byte result = 0;
-            byte n = (byte)Math.Pow(2, this.各爻阴阳.Count());
+            int result = 0;
+            int n = (int)Math.Pow(2, this.各爻阴阳.Count());
             result += n;
             n /= 2;
             foreach (var 阴阳 in this.各爻阴阳)
@@ -83,7 +83,7 @@ namespace 周易
                 }
                 n /= 2;
             }
-            return result;
+            return (byte)result;
         }
         /// <summary>
         /// Convert from a <see cref="byte"/> .

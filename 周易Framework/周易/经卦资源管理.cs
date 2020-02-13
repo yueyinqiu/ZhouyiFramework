@@ -31,13 +31,12 @@ namespace 周易
         public static 经卦 获取经卦(char 卦名)
         {
             var all = Properties.Resources.经卦卦名对照;
-            var intIndex = all.IndexOf(卦名);
-            if (intIndex == -1)
+            var index = all.IndexOf(卦名);
+            if (index == -1)
             {
                 throw new ArgumentOutOfRangeException(nameof(卦名),
                     $"没有找到 {nameof(卦名)}：{卦名} 对应的经卦。"); 
             }
-            byte index = (byte)intIndex;
             return new 经卦(index, 卦名, 获取卦对应的自然现象(index), 获取卦画(index));
         }
         /// <summary>
@@ -60,11 +59,11 @@ namespace 周易
             {
                 throw new ArgumentException($"{nameof(卦画)}：{卦画} 不正确。应该为三爻。", nameof(卦画));
             }
-            byte index = default;
+            int index = default;
             using (var ms = new MemoryStream(Properties.Resources.经卦卦画对照))
             {
                 var b = 卦画.ToByte();
-                for (byte i = 0; i < 8; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     if (ms.ReadByte() == b)
                     {
@@ -75,15 +74,15 @@ namespace 周易
             }
             return new 经卦(index, 获取卦名(index), 获取卦对应的自然现象(index), 卦画);
         }
-        internal static 经卦 获取经卦(byte index)
+        internal static 经卦 获取经卦(int index)
         {
             return new 经卦(index, 获取卦名(index), 获取卦对应的自然现象(index), 获取卦画(index));
         }
-        private static char 获取卦名(byte index)
+        private static char 获取卦名(int index)
             => Properties.Resources.经卦卦名对照[index];
-        private static char 获取卦对应的自然现象(byte index)
+        private static char 获取卦对应的自然现象(int index)
             => Properties.Resources.经卦自然现象对照[index];
-        private static 卦画 获取卦画(byte index)
+        private static 卦画 获取卦画(int index)
         {
             byte b;
             using (var ms = new MemoryStream(Properties.Resources.经卦卦画对照))

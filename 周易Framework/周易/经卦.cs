@@ -10,7 +10,7 @@ namespace 周易
     /// </summary>
     public sealed partial class 经卦
     {
-        internal 经卦(byte index, char 卦名, char 自然现象, 卦画 卦画)
+        internal 经卦(int index, char 卦名, char 自然现象, 卦画 卦画)
         {
             this.Index = index;
             this.卦名 = 卦名;
@@ -20,7 +20,7 @@ namespace 周易
             this.中爻阴阳 = 各爻阴阳[1];
             this.上爻阴阳 = 各爻阴阳[2];
         }
-        internal byte Index { get; }
+        internal int Index { get; }
         /// <summary>
         /// Get the trigram's name.
         /// </summary>

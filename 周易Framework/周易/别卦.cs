@@ -11,9 +11,9 @@ namespace 周易
     /// </summary>
     public sealed partial class 别卦
     {
-        internal 别卦(byte index,string 卦名, string 卦辞, string 用辞 = null, params 爻[] 各爻)
+        internal 别卦(int index,string 卦名, string 卦辞, string 用辞 = null, params 爻[] 各爻)
         {
-            this.易经序号 = (byte)(index + 1);
+            this.易经序号 = index + 1;
             this.卦名 = 卦名;
             this.卦辞 = 卦辞;
             this.用辞 = 用辞;
@@ -28,7 +28,7 @@ namespace 周易
         /// Get the position of the hexagram in I Ching.
         /// The value ranges from 1 to 64. 
         /// </summary>
-        public byte 易经序号 { get; }
+        public int 易经序号 { get; }
 
         /// <summary>
         /// Get the painting of the hexagram.
