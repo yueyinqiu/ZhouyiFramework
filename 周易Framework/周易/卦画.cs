@@ -206,7 +206,6 @@ namespace 周易
             return this.ToByte().Equals(other.ToByte());
         }
 
-#warning 没有注释。
         /// <summary>
         /// 
         /// </summary>
@@ -218,7 +217,6 @@ namespace 周易
             return left?.ToByte() == right?.ToByte();
         }
 
-#warning 没有注释。
         /// <summary>
         /// 
         /// </summary>

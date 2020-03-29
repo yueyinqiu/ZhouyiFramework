@@ -155,5 +155,15 @@ namespace 周易
             stringBuilder.Remove(stringBuilder.Length - 1, 1);
             return stringBuilder.ToString();
         }
+        /// <summary>
+        /// Returns the character that implement the current <see cref="别卦"/> .
+        /// The return ranges from '\u4DC1' to '\u4DFF'.
+        /// The character can't be printed as expected without a font that support it.
+        /// </summary>
+        /// <returns>The character that implement the current <see cref="别卦"/> .</returns>
+        public char ToChar()
+        {
+            return (char)('\u4DC0' + (this.易经序号 - 1));
+        }
     }
 }
