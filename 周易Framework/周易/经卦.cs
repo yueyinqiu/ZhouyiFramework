@@ -45,5 +45,15 @@ namespace 周易
         /// Get the attribute (yin or yang) of the bottom (first) line.
         /// </summary>
         public 阴阳 初爻阴阳 { get; }
+        /// <summary>
+        /// Returns the character that implement the current <see cref="经卦"/> .
+        /// The return ranges from '\u2630' to '\u2637'.
+        /// The character can't be printed as expected without a font that support it.
+        /// </summary>
+        /// <returns>The character that implement the current <see cref="经卦"/> .</returns>
+        public char ToChar()
+        {
+            return (char)('\u2630' + this.Index);
+        }
     }
 }

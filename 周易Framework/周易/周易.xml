@@ -459,6 +459,14 @@
             </summary>
             <returns>The text.</returns>
         </member>
+        <member name="M:周易.别卦.ToChar">
+            <summary>
+            Returns the character that implement the current <see cref="T:周易.别卦"/> .
+            The return ranges from '\u4DC1' to '\u4DFF'.
+            The character can't be printed as expected without a font that support it.
+            </summary>
+            <returns>The character that implement the current <see cref="T:周易.别卦"/> .</returns>
+        </member>
         <member name="P:周易.别卦.全部别卦卦名">
             <summary>
             Get the names of all hexagrams.
@@ -686,6 +694,14 @@
             <summary>
             Get the attribute (yin or yang) of the bottom (first) line.
             </summary>
+        </member>
+        <member name="M:周易.经卦.ToChar">
+            <summary>
+            Returns the character that implement the current <see cref="T:周易.经卦"/> .
+            The return ranges from '\u2630' to '\u2637'.
+            The character can't be printed as expected without a font that support it.
+            </summary>
+            <returns>The character that implement the current <see cref="T:周易.经卦"/> .</returns>
         </member>
         <member name="P:周易.经卦.全部经卦卦名">
             <summary>
