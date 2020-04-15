@@ -12,4 +12,4 @@ The data is from http://www.ziyexing.com/files-5/zhouyi/zhouyi_index.htm .
 You can find this library on https://www.nuget.org/ （ZhouyiFramework）.  
 
 你可以通过 `Test` 项目来了解如何使用这个库。  
-You can learn how to use this library through the project `Test`.  
+You can learn how to use this library through the project `Test` .  
