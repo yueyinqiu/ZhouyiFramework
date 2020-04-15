@@ -2,8 +2,8 @@
 这是一个C#的《周易》相关支持库。  
 It's a library about IChing in C#.  
 
-在 `周易/Resource` 目录下可以找到相关资源（用辞除外）。  
-You can find the resources at `周易/Resource` (except the words after the word "yong" which only exists in Ch'ien (Heaven) and K'un (Earth)).  
+在 `周易/Resource` 目录下可以找到相关资源。  
+You can find the resources at `周易/Resource` .  
 
 数据来自： http://www.ziyexing.com/files-5/zhouyi/zhouyi_index.htm 。  
 The data is from http://www.ziyexing.com/files-5/zhouyi/zhouyi_index.htm .  
