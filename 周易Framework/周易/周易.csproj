@@ -1,39 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <ApplicationIcon />
-    <Win32Resource />
-    <OutputType>Library</OutputType>
-    <StartupObject />
-  </PropertyGroup>  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\user\source\repos\ZhouyiFramework\周易Framework\周易\周易.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DebugType>pdbonly</DebugType>
+    <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageId>ZhouyiFramework</PackageId>
     <Authors>月银秋5990</Authors>
+    <Version>5.0.0</Version>
     <Product>周易Framework</Product>
     <Description>A C# library about I Ching (Zhouyi, Yijing, 《易经》, 《周易》).</Description>
-    <Copyright>Copyright © 2020 月银秋5990. All rights reserved.</Copyright>
-    <Company />
-    <RepositoryUrl>https://github.com/yueyinqiu/ZhouyiFramework.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageIcon>太极.png</PackageIcon>
-    <PackageIconUrl />
-    <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <Version>5.0.0</Version>
-    <AssemblyVersion>5.0.0.0</AssemblyVersion>
-    <FileVersion>5.0.0.0</FileVersion>
-    <PackageTags>zhouyi;i-ching;yijing</PackageTags>
+    <Copyright>Copyright © 2021 月银秋5990. All rights reserved.</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/yueyinqiu/ZhouyiFramework</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/yueyinqiu/ZhouyiFramework.git</RepositoryUrl>
+    <PackageIcon>太极.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>zhouyi;i-ching;yijing</PackageTags>
+
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\user\source\repos\ZhouyiFramework\周易Framework\周易\周易.xml</DocumentationFile>
-  </PropertyGroup>
+
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -50,6 +36,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\太极.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="..\太极.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

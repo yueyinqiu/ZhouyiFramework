@@ -2,14 +2,16 @@
 using System.Linq;
 using 周易;
 
-namespace Test
+namespace Tester
 {
     internal class Program
     {
         private static readonly Random random = new Random();
         private static void Main()
         {
+            Console.WriteLine("Press Enter.");
             {
+                Console.ReadLine();
                 Console.WriteLine("This example shows how to get a hexagram by its name.");
                 别卦 乾卦 = 别卦.获取别卦("乾");
 
@@ -19,6 +21,7 @@ namespace Test
                 Console.WriteLine();
             }
             {
+                Console.ReadLine();
                 Console.WriteLine("This example shows how to get a hexagram by two trigrams.");
                 经卦 兑卦 = 经卦.获取经卦('兑');
                 经卦 艮卦 = 经卦.获取经卦('艮');
@@ -30,6 +33,7 @@ namespace Test
                 Console.WriteLine();
             }
             {
+                Console.ReadLine();
                 Console.WriteLine("This example shows the high degree of freedom when using the paintings.");
                 经卦 经卦兑卦 = 经卦.获取经卦('兑');
                 卦画 经卦兑卦卦画 = 经卦兑卦.卦画;
@@ -41,12 +45,12 @@ namespace Test
                 Console.WriteLine();
             }
             {
+                Console.ReadLine();
                 Console.WriteLine("This example shows the usage of the method \"周易.别卦.ToString()\".");
                 int rand = random.Next(0, 63);
                 string 卦名 = 别卦.全部别卦卦名.ToArray()[rand];
                 别卦 卦 = 别卦.获取别卦(卦名);
                 Console.WriteLine(卦.ToString());
-                Console.ReadLine();
             }
         }
     }

@@ -150,7 +150,7 @@ namespace 周易
         /// <returns>A value that indicates the relative order of the objects being compared.</returns>
         public int CompareTo(卦画 other)
         {
-            if (other == null)
+            if (other is null)
                 return 1;
             return this.GetHashCode().CompareTo(other.GetHashCode());
         }
@@ -188,7 +188,7 @@ namespace 周易
         /// <returns>true if obj is equal to this instance; otherwise, false.</returns>
         public bool Equals(卦画 other)
         {
-            if (other == null)
+            if (other is null)
                 return false;
             return this.各爻阴阳.SequenceEqual(other.各爻阴阳);
         }
@@ -201,9 +201,9 @@ namespace 周易
         /// <returns></returns>
         public static bool operator ==(卦画 left, 卦画 right)
         {
-            if (left == null)
-                return right == null;
-            if (right == null)
+            if (left is null)
+                return right is null;
+            if (right is null)
                 return false;
             return left.SequenceEqual(right);
         }
@@ -216,9 +216,9 @@ namespace 周易
         /// <returns></returns>
         public static bool operator !=(卦画 left, 卦画 right)
         {
-            if (left == null)
-                return right != null;
-            if (right == null)
+            if (left is null)
+                return right is not null;
+            if (right is null)
                 return true;
             return !left.SequenceEqual(right);
         }

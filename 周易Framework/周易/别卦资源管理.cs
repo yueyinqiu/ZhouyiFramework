@@ -80,9 +80,9 @@ namespace 周易
         /// <exception cref="ArgumentNullException">At least one argument is null.</exception>
         public static 别卦 获取别卦(经卦 主卦, 经卦 客卦)
         {
-            if (主卦 == null)
+            if (主卦 is null)
                 throw new ArgumentNullException(nameof(主卦));
-            if (客卦 == null)
+            if (客卦 is null)
                 throw new ArgumentNullException(nameof(客卦));
             int index;
             using (var ms = new MemoryStream(Properties.Resources.别卦经卦对照))
@@ -104,7 +104,7 @@ namespace 周易
         /// <exception cref="ArgumentNullException"> <paramref name="卦画"/> is null.</exception>
         public static 别卦 获取别卦(卦画 卦画)
         {
-            if (卦画 == null)
+            if (卦画 is null)
             {
                 throw new ArgumentNullException(nameof(卦画));
             }
@@ -128,9 +128,7 @@ namespace 周易
                     {
                         var br = ms.ReadByte();
                         if (br == 30)
-                        {
                             break;
-                        }
                     }
                 }
                 List<byte> bytes = new List<byte>(8);
@@ -138,9 +136,7 @@ namespace 周易
                 {
                     var br = ms.ReadByte();
                     if (br == 30)
-                    {
                         break;
-                    }
                     bytes.Add((byte)br);
                 }
                 卦名 = Encoding.UTF8.GetString(bytes.ToArray());
@@ -156,9 +152,7 @@ namespace 周易
                     {
                         var br = str.ReadByte();
                         if (br == 31)
-                        {
                             break;
-                        }
                         bytes.Add((byte)br);
                     }
                     卦辞 = Encoding.UTF8.GetString(bytes.ToArray());
@@ -170,9 +164,7 @@ namespace 周易
                     {
                         var br = str.ReadByte();
                         if (br == 30)
-                        {
                             break;
-                        }
                         bytes.Add((byte)br);
                     }
                     阴阳 阴阳;

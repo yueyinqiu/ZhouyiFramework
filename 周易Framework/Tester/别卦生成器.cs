@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Test
+namespace Tester
 {
     internal class 别卦生成器
     {
