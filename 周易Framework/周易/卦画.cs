@@ -48,9 +48,7 @@ namespace 周易
         public 卦画(params 阴阳[] 各爻阴阳)
         {
             if (各爻阴阳 == null)
-            {
                 this.各爻阴阳 = new 阴阳[0];
-            }
             this.各爻阴阳 = new 阴阳[各爻阴阳.Length];
             各爻阴阳.CopyTo(this.各爻阴阳, 0);
         }
@@ -67,23 +65,20 @@ namespace 周易
         /// <summary>
         /// Convert to a <see cref="byte"/> .
         /// You can convert it back by using <seealso cref="FromByte(byte)"/> .
+        /// A painting with more than 6 lines can't be correctly converted, and a <see cref="OverflowException"/> will be thrown.
         /// </summary>
         /// <returns>The byte that can represent this painting.</returns>
+        /// <exception cref="OverflowException">There are more than 6 lines.</exception>
         public byte ToByte()
         {
-            int result = 0;
-            int n = (int)Math.Pow(2, this.各爻阴阳.Count());
-            result += n;
-            n /= 2;
+            int result = 1;
             foreach (var 阴阳 in this.各爻阴阳)
             {
+                result <<= 1;
                 if (阴阳 == 阴阳.阳)
-                {
-                    result += n;
-                }
-                n /= 2;
+                    result++;
             }
-            return (byte)result;
+            return checked((byte)result);
         }
         /// <summary>
         /// Convert from a <see cref="byte"/> .
@@ -119,9 +114,7 @@ namespace 周易
         {
             StringBuilder stringBuilder = new StringBuilder(6);
             foreach (var 阴阳 in this.各爻阴阳)
-            {
                 stringBuilder.Append(阴阳 == 阴阳.阳 ? 1 : 0);
-            }
             return stringBuilder.ToString();
         }
         /// <summary>
@@ -129,7 +122,6 @@ namespace 周易
         /// </summary>
         /// <param name="s">
         /// The string represents the painting.
-        /// Its property <see cref="string.Length"/> should be less than 8 and only digits are allowed.
         /// </param>
         /// <returns>The painting.</returns>
         /// <exception cref="ArgumentNullException"> <paramref name="s"/> is null.</exception>
@@ -137,20 +129,12 @@ namespace 周易
         public static 卦画 Parse(string s)
         {
             if (s == null)
-            {
                 throw new ArgumentNullException(nameof(s));
-            }
-            if (s.Length > 7)
-            {
-                throw new FormatException($"{nameof(s)}的格式不正确。其长度不允许超过 7。");
-            }
             List<阴阳> r = new List<阴阳>(6);
             foreach (var c in s)
             {
                 if (c < '0' || c > '9')
-                {
                     throw new FormatException($"{nameof(s)}的格式不正确。只允许出现数字字符。");
-                }
                 r.Add(c % 2 == 0 ? 阴阳.阴 : 阴阳.阳);
             }
             return new 卦画() {
@@ -160,16 +144,15 @@ namespace 周易
 
         /// <summary>
         /// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+        /// It will actually compare their hash codes.
         /// </summary>
         /// <param name="other">An object to compare with this instance.</param>
         /// <returns>A value that indicates the relative order of the objects being compared.</returns>
         public int CompareTo(卦画 other)
         {
             if (other == null)
-            {
                 return 1;
-            }
-            return this.ToByte().CompareTo(other.ToByte());
+            return this.GetHashCode().CompareTo(other.GetHashCode());
         }
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified object.
@@ -179,18 +162,24 @@ namespace 周易
         public override bool Equals(object obj)
         {
             if (obj is 卦画 画)
-            {
-                return this.ToByte().Equals(画.ToByte());
-            }
+                return this.各爻阴阳.SequenceEqual(画.各爻阴阳);
             return false;
         }
         /// <summary>
         /// Returns the hash code for this instance.
+        /// It is actually an <see cref="int"/> equivalent of the painting when there are less then 32 lines.
         /// </summary>
-        /// <returns>A hash code for the current <see cref="卦画"/>.</returns>
+        /// <returns>A hash code for the current <see cref="卦画"/> .</returns>
         public override int GetHashCode()
         {
-            return this.ToByte();
+            int result = 1;
+            foreach (var 阴阳 in this.各爻阴阳)
+            {
+                result <<= 1;
+                if (阴阳 == 阴阳.阳)
+                    result++;
+            }
+            return result;
         }
         /// <summary>
         /// Returns a value indicating whether this instance and a specified <see cref="卦画"/> object represent the same value.
@@ -200,10 +189,8 @@ namespace 周易
         public bool Equals(卦画 other)
         {
             if (other == null)
-            {
                 return false;
-            }
-            return this.ToByte().Equals(other.ToByte());
+            return this.各爻阴阳.SequenceEqual(other.各爻阴阳);
         }
 
         /// <summary>
@@ -214,7 +201,11 @@ namespace 周易
         /// <returns></returns>
         public static bool operator ==(卦画 left, 卦画 right)
         {
-            return left?.ToByte() == right?.ToByte();
+            if (left == null)
+                return right == null;
+            if (right == null)
+                return false;
+            return left.SequenceEqual(right);
         }
 
         /// <summary>
@@ -225,7 +216,11 @@ namespace 周易
         /// <returns></returns>
         public static bool operator !=(卦画 left, 卦画 right)
         {
-            return left?.ToByte() != right?.ToByte();
+            if (left == null)
+                return right != null;
+            if (right == null)
+                return true;
+            return !left.SequenceEqual(right);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace 周易
 {
@@ -33,10 +32,8 @@ namespace 周易
             var all = Properties.Resources.经卦卦名对照;
             var index = all.IndexOf(卦名);
             if (index == -1)
-            {
                 throw new ArgumentOutOfRangeException(nameof(卦名),
-                    $"没有找到 {nameof(卦名)}：{卦名} 对应的经卦。"); 
-            }
+                    $"没有找到 {nameof(卦名)}：{卦名} 对应的经卦。");
             return new 经卦(index, 卦名, 获取卦对应的自然现象(index), 获取卦画(index));
         }
         /// <summary>
@@ -51,14 +48,10 @@ namespace 周易
         /// <exception cref="ArgumentNullException"> <paramref name="卦画"/> is null.</exception>
         public static 经卦 获取经卦(卦画 卦画)
         {
-            if(卦画 == null)
-            {
+            if (卦画 == null)
                 throw new ArgumentNullException(nameof(卦画));
-            }
-            if(卦画.爻数 != 3)
-            {
+            if (卦画.爻数 != 3)
                 throw new ArgumentException($"{nameof(卦画)}：{卦画} 不正确。应该为三爻。", nameof(卦画));
-            }
             int index = default;
             using (var ms = new MemoryStream(Properties.Resources.经卦卦画对照))
             {

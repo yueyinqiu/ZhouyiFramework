@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ApplicationIcon />
     <Win32Resource />
     <OutputType>Library</OutputType>
@@ -20,7 +20,7 @@
     <Copyright>Copyright © 2020 月银秋5990. All rights reserved.</Copyright>
     <Company />
     <RepositoryUrl>https://github.com/yueyinqiu/ZhouyiFramework.git</RepositoryUrl>
-    <RepositoryType></RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <PackageIcon>太极.png</PackageIcon>
     <PackageIconUrl />
     <PackageLicenseFile>license.txt</PackageLicenseFile>
@@ -28,6 +28,8 @@
     <AssemblyVersion>5.0.0.0</AssemblyVersion>
     <FileVersion>5.0.0.0</FileVersion>
     <PackageTags>zhouyi;i-ching;yijing</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/yueyinqiu/ZhouyiFramework</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>C:\Users\user\source\repos\ZhouyiFramework\周易Framework\周易\周易.xml</DocumentationFile>
@@ -48,10 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\license.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
     <None Include="..\太极.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

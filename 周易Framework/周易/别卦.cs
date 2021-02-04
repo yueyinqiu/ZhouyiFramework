@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Resources;
 using System.Text;
 
 namespace 周易
@@ -11,7 +9,7 @@ namespace 周易
     /// </summary>
     public sealed partial class 别卦
     {
-        internal 别卦(int index,string 卦名, string 卦辞, string 用辞 = null, params 爻[] 各爻)
+        internal 别卦(int index, string 卦名, string 卦辞, string 用辞 = null, params 爻[] 各爻)
         {
             this.易经序号 = index + 1;
             this.卦名 = 卦名;
@@ -116,42 +114,33 @@ namespace 周易
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder(180);
+
             stringBuilder.Append($"第{this.易经序号}卦 {this.卦名} ");
-            if(this.主卦.卦画 == this.客卦.卦画)
-            {
+
+            if (this.主卦.卦画 == this.客卦.卦画)
                 stringBuilder.Append($"{this.卦名}为{this.客卦.自然属性} ");
-            }
             else
-            {
                 stringBuilder.Append($"{this.客卦.自然属性}{this.主卦.自然属性}{this.卦名} ");
-            }
-            if(this.易经序号 == 8)
-            {
+
+            if (this.易经序号 == 8)
                 // 比卦
                 stringBuilder.AppendLine($"{this.客卦.卦名}上下{this.主卦.卦名}");
-            }
             else
-            {
                 stringBuilder.AppendLine($"{this.客卦.卦名}上{this.主卦.卦名}下");
-            }
+
             stringBuilder.AppendLine($"{this.卦名}：{this.卦辞}");
+
             foreach (var 爻 in this.各爻)
-            {
                 stringBuilder.AppendLine($"{爻.爻题}：{爻.爻辞}");
-            }
+
             if (this.用辞 != null)
-            {
                 if (this.易经序号 == 1)
-                {
                     // 乾卦
                     stringBuilder.AppendLine($"用九：{this.用辞}");
-                }
                 else
-                {
                     // 坤卦
                     stringBuilder.AppendLine($"用六：{this.用辞}");
-                }
-            }
+
             stringBuilder.Remove(stringBuilder.Length - 1, 1);
             return stringBuilder.ToString();
         }

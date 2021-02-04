@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 
 namespace 周易
@@ -16,22 +15,21 @@ namespace 周易
         {
             get
             {
-                using (var ms = new MemoryStream(Properties.Resources.别卦卦名对照))
-                    for (int r = 0; r < 64; r++)
+                using var ms = new MemoryStream(Properties.Resources.别卦卦名对照);
+                for (int r = 0; r < 64; r++)
+                {
+                    List<byte> bytes = new List<byte>(8);
+                    for (; ; )
                     {
-                        List<byte> bytes = new List<byte>(8);
-                        for (; ; )
-                        {
-                            var br = ms.ReadByte();
-                            if (br == 30)
-                            {
-                                break;
-                            }
-                            bytes.Add((byte)br);
-                        }
-                        var str = Encoding.UTF8.GetString(bytes.ToArray());
-                        yield return str;
+                        var br = ms.ReadByte();
+                        if (br == 30)
+                            break;
+                        bytes.Add((byte)br);
                     }
+                    var str = Encoding.UTF8.GetString(bytes.ToArray());
+                    yield return str;
+                }
+                yield break;
             }
         }
         /// <summary>
@@ -56,23 +54,21 @@ namespace 周易
                     {
                         var br = ms.ReadByte();
                         if (br == 30)
-                        {
                             break;
-                        }
                         bytes.Add((byte)br);
                     }
                     var str = Encoding.UTF8.GetString(bytes.ToArray());
                     if (str == 卦名)
                     {
                         index = r;
+                        break;
                     }
                 }
             }
             if (index == -1)
-            {
                 throw new ArgumentOutOfRangeException(nameof(卦名),
                     $"没有找到 {nameof(卦名)}：{卦名} 对应的别卦。应该输入全称，且末尾不带 “卦” 字。");
-            }
+
             return 获取别卦(index, 卦名);
         }
         /// <summary>
@@ -85,13 +81,9 @@ namespace 周易
         public static 别卦 获取别卦(经卦 主卦, 经卦 客卦)
         {
             if (主卦 == null)
-            {
                 throw new ArgumentNullException(nameof(主卦));
-            }
             if (客卦 == null)
-            {
                 throw new ArgumentNullException(nameof(客卦));
-            }
             int index;
             using (var ms = new MemoryStream(Properties.Resources.别卦经卦对照))
             {
@@ -196,16 +188,13 @@ namespace 周易
                 }
             }
 
-            string 用辞 = null;
-            if (index == 0)
-            {
-                用辞 = Properties.Resources.乾卦用辞;
-            }
-            if (index == 1)
-            {
-                用辞 = Properties.Resources.坤卦用辞;
-            }
-            return new 别卦(index,卦名, 卦辞, 用辞, 各爻);
+            string 用辞 = index switch {
+                0 => Properties.Resources.乾卦用辞,
+                1 => Properties.Resources.坤卦用辞,
+                _ => null
+            };
+
+            return new 别卦(index, 卦名, 卦辞, 用辞, 各爻);
         }
         private static 别卦 获取别卦(int index, string 卦名)
         {
@@ -233,9 +222,7 @@ namespace 周易
                     {
                         var br = str.ReadByte();
                         if (br == 31)
-                        {
                             break;
-                        }
                         bytes.Add((byte)br);
                     }
                     卦辞 = Encoding.UTF8.GetString(bytes.ToArray());
@@ -247,33 +234,24 @@ namespace 周易
                     {
                         var br = str.ReadByte();
                         if (br == 30)
-                        {
                             break;
-                        }
                         bytes.Add((byte)br);
                     }
                     阴阳 阴阳;
-                    if (i < 3)
-                    {
+                    if (i < 3) // 0, 1, 2
                         阴阳 = 主卦.卦画[i];
-                    }
-                    else
-                    {
+                    else // 3, 4, 5
                         阴阳 = 客卦.卦画[i - 3];
-                    }
                     各爻[i] = new 爻(i + 1, 阴阳, Encoding.UTF8.GetString(bytes.ToArray()));
                 }
             }
 
-            string 用辞 = null;
-            if (index == 0)
-            {
-                用辞 = Properties.Resources.乾卦用辞;
-            }
-            if (index == 1)
-            {
-                用辞 = Properties.Resources.坤卦用辞;
-            }
+            string 用辞 = index switch {
+                0 => Properties.Resources.乾卦用辞,
+                1 => Properties.Resources.坤卦用辞,
+                _ => null
+            };
+
             return new 别卦(index, 卦名, 卦辞, 用辞, 各爻);
         }
     }

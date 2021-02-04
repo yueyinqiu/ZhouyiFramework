@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace 周易
+﻿namespace 周易
 {
     /// <summary>
     /// Represents a line in a hexagram.
