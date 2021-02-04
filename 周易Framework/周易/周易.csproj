@@ -21,8 +21,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
-    <OutputPath>obj\Release\net5.0\周易.xml</OutputPath>
+    <DocumentationFile>obj\Release\net5.0\周易.xml</DocumentationFile>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
