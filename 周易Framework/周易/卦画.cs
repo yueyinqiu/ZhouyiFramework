@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
@@ -8,7 +9,7 @@ namespace 周易
 {
     /// <summary>
     /// Represents a painting made up by the yin and yang lines.
-    /// While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="卦画(阴阳[])"/> , <seealso cref="FromByte(byte)"/> and <seealso cref="Parse(string)"/> to make your own painting but a painting including more than 7 lines is not allowed.
+    /// While generally it can stand for a hexagram or a trigram, you can also use <seealso cref="卦画(阴阳[])"/> , <seealso cref="FromByte(byte)"/> and <seealso cref="Parse(string)"/> to make your own painting.
     /// When you use this class as <see cref="IEnumerable"/> or <see cref="IEnumerable{T}"/> , you will get the lower lines first.
     /// </summary>
     public sealed class 卦画 : IEnumerable<阴阳>, IComparable<卦画>, IEquatable<卦画>
@@ -40,15 +41,12 @@ namespace 周易
         /// </summary>
         public int 爻数 => this.各爻阴阳.Length;
 
-        private 卦画() { }
         /// <summary>
         /// Initializes a new instance of <seealso cref="卦画"/>.
         /// </summary>
-        /// <param name="各爻阴阳"></param>
+        /// <param name="各爻阴阳">The lines, with the lower ones going first.</param>
         public 卦画(params 阴阳[] 各爻阴阳)
         {
-            if (各爻阴阳 == null)
-                this.各爻阴阳 = new 阴阳[0];
             this.各爻阴阳 = new 阴阳[各爻阴阳.Length];
             各爻阴阳.CopyTo(this.各爻阴阳, 0);
         }
@@ -65,10 +63,10 @@ namespace 周易
         /// <summary>
         /// Convert to a <see cref="byte"/> .
         /// You can convert it back by using <seealso cref="FromByte(byte)"/> .
-        /// A painting with more than 6 lines can't be correctly converted, and a <see cref="OverflowException"/> will be thrown.
+        /// A painting with more than seven lines can't be correctly converted, and a <see cref="OverflowException"/> will be thrown.
         /// </summary>
         /// <returns>The byte that can represent this painting.</returns>
-        /// <exception cref="OverflowException">There are more than 6 lines.</exception>
+        /// <exception cref="OverflowException">There are more than seven lines.</exception>
         public byte ToByte()
         {
             int result = 1;
@@ -101,9 +99,7 @@ namespace 周易
                 }
                 r.Add(bit ? 阴阳.阳 : 阴阳.阴);
             }
-            return new 卦画() {
-                各爻阴阳 = r.ToArray()
-            };
+            return new 卦画(r.ToArray());
         }
         /// <summary>
         /// Returns a string that represents the painting.
@@ -112,7 +108,7 @@ namespace 周易
         /// <returns>The string.</returns>
         public override string ToString()
         {
-            StringBuilder stringBuilder = new StringBuilder(6);
+            StringBuilder stringBuilder = new StringBuilder(this.各爻阴阳.Length);
             foreach (var 阴阳 in this.各爻阴阳)
                 stringBuilder.Append(阴阳 == 阴阳.阳 ? 1 : 0);
             return stringBuilder.ToString();
@@ -123,10 +119,10 @@ namespace 周易
         /// <param name="s">
         /// The string represents the painting.
         /// </param>
-        /// <returns>The painting.</returns>
+        /// <param name="result">The painting.</param>
+        /// <returns>A value indicates whether it has been successfully converted or not.</returns>
         /// <exception cref="ArgumentNullException"> <paramref name="s"/> is null.</exception>
-        /// <exception cref="FormatException"> <paramref name="s"/> is not in the correct format.</exception>
-        public static 卦画 Parse(string s)
+        public static bool TryParse(string s, [NotNullWhen(true)] out 卦画? result)
         {
             if (s == null)
                 throw new ArgumentNullException(nameof(s));
@@ -134,12 +130,14 @@ namespace 周易
             foreach (var c in s)
             {
                 if (c < '0' || c > '9')
-                    throw new FormatException($"{nameof(s)}的格式不正确。只允许出现数字字符。");
+                {
+                    result = null;
+                    return false;
+                }
                 r.Add(c % 2 == 0 ? 阴阳.阴 : 阴阳.阳);
             }
-            return new 卦画() {
-                各爻阴阳 = r.ToArray()
-            };
+            result = new 卦画(r.ToArray());
+            return true;
         }
 
         /// <summary>
@@ -148,7 +146,7 @@ namespace 周易
         /// </summary>
         /// <param name="other">An object to compare with this instance.</param>
         /// <returns>A value that indicates the relative order of the objects being compared.</returns>
-        public int CompareTo(卦画 other)
+        public int CompareTo(卦画? other)
         {
             if (other is null)
                 return 1;
@@ -159,7 +157,7 @@ namespace 周易
         /// </summary>
         /// <param name="obj">An object to compare with this instance, or null.</param>
         /// <returns>true if obj is an instance of System.Byte and equals the value of this instance; otherwise, false.</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is 卦画 画)
                 return this.各爻阴阳.SequenceEqual(画.各爻阴阳);
@@ -186,7 +184,7 @@ namespace 周易
         /// </summary>
         /// <param name="other">An object to compare to this instance.</param>
         /// <returns>true if obj is equal to this instance; otherwise, false.</returns>
-        public bool Equals(卦画 other)
+        public bool Equals(卦画? other)
         {
             if (other is null)
                 return false;
@@ -199,7 +197,7 @@ namespace 周易
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static bool operator ==(卦画 left, 卦画 right)
+        public static bool operator ==(卦画? left, 卦画? right)
         {
             if (left is null)
                 return right is null;
@@ -214,7 +212,7 @@ namespace 周易
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static bool operator !=(卦画 left, 卦画 right)
+        public static bool operator !=(卦画? left, 卦画? right)
         {
             if (left is null)
                 return right is not null;

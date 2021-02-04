@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text;
 
@@ -39,10 +41,11 @@ namespace 周易
         /// The name.
         /// The value shouldn't end with '卦'.
         /// </param>
-        /// <returns>The hexagram.</returns>
+        /// <param name="result">The hexagram.</param>
+        /// <returns>A value indicates whether the hexagram has been found or not.</returns>
         /// <exception cref="ArgumentOutOfRangeException">No such hexagram was found.</exception>
         /// <exception cref="ArgumentNullException"> <paramref name="卦名"/> is null.</exception>
-        public static 别卦 获取别卦(string 卦名)
+        public static bool 获取别卦(string 卦名, [NotNullWhen(true)] out 别卦? result)
         {
             int index = -1;
             using (var ms = new MemoryStream(Properties.Resources.别卦卦名对照))
@@ -66,19 +69,22 @@ namespace 周易
                 }
             }
             if (index == -1)
-                throw new ArgumentOutOfRangeException(nameof(卦名),
-                    $"没有找到 {nameof(卦名)}：{卦名} 对应的别卦。应该输入全称，且末尾不带 “卦” 字。");
-
-            return 获取别卦(index, 卦名);
+            {
+                result = null;
+                return false;
+            }
+            result = 获取别卦(index, 卦名);
+            return true;
         }
         /// <summary>
         /// Get a hexagram from its two trigrams.
         /// </summary>
         /// <param name="主卦">The lower trigram.</param>
         /// <param name="客卦">The upper trigram.</param>
-        /// <returns>The hexagram.</returns>
+        /// <param name="result">The hexagram.</param>
+        /// <returns>Always <c>true</c> .</returns>
         /// <exception cref="ArgumentNullException">At least one argument is null.</exception>
-        public static 别卦 获取别卦(经卦 主卦, 经卦 客卦)
+        public static bool 获取别卦(经卦 主卦, 经卦 客卦, [NotNullWhen(true)] out 别卦? result)
         {
             if (主卦 is null)
                 throw new ArgumentNullException(nameof(主卦));
@@ -90,7 +96,8 @@ namespace 周易
                 ms.Position = 客卦.Index * 8 + 主卦.Index;
                 index = ms.ReadByte();
             }
-            return 获取别卦(index, 主卦, 客卦);
+            result = 获取别卦(index, 主卦, 客卦);
+            return true;
         }
         /// <summary>
         /// Get a hexagram from its painting.
@@ -99,22 +106,27 @@ namespace 周易
         /// The painting.
         /// Its property <see cref="卦画.爻数"/> should be 6.
         /// </param>
-        /// <returns>The hexagram.</returns>
+        /// <param name="result">The hexagram.</param>
+        /// <returns>A value indicates whether the hexagram has been found or not.</returns>
         /// <exception cref="ArgumentException"> <see cref="卦画.爻数"/> of <paramref name="卦画"/> isn't 6.</exception>
         /// <exception cref="ArgumentNullException"> <paramref name="卦画"/> is null.</exception>
-        public static 别卦 获取别卦(卦画 卦画)
+        public static bool 获取别卦(卦画 卦画, [NotNullWhen(true)] out 别卦? result)
         {
             if (卦画 is null)
-            {
                 throw new ArgumentNullException(nameof(卦画));
-            }
             if (卦画.爻数 != 6)
             {
-                throw new ArgumentException($"{nameof(卦画)}：{卦画} 不正确。应该为六爻。", nameof(卦画));
+                result = null;
+                return false;
             }
-            经卦 主卦 = 经卦.获取经卦(new 卦画(false, 卦画[0], 卦画[1], 卦画[2]));
-            经卦 客卦 = 经卦.获取经卦(new 卦画(false, 卦画[3], 卦画[4], 卦画[5]));
-            return 获取别卦(主卦, 客卦);
+
+            经卦.获取经卦(new 卦画(false, 卦画[0], 卦画[1], 卦画[2]), out 经卦? 主卦);
+            Debug.Assert(主卦 is not null);
+
+            经卦.获取经卦(new 卦画(false, 卦画[3], 卦画[4], 卦画[5]), out 经卦? 客卦);
+            Debug.Assert(客卦 is not null);
+
+            return 获取别卦(主卦, 客卦, out result);
         }
 
         private static 别卦 获取别卦(int index, 经卦 主卦, 经卦 客卦)
@@ -144,7 +156,10 @@ namespace 周易
 
             string 卦辞;
             爻[] 各爻 = new 爻[6];
-            using (var str = new MemoryStream((byte[])Properties.Resources.ResourceManager.GetObject($"G{index}")))
+
+            var gindex = Properties.Resources.ResourceManager.GetObject($"G{index}") as byte[];
+            Debug.Assert(gindex is not null);
+            using (var str = new MemoryStream(gindex))
             {
                 {
                     List<byte> bytes = new List<byte>(100);
@@ -169,18 +184,14 @@ namespace 周易
                     }
                     阴阳 阴阳;
                     if (i < 3)
-                    {
                         阴阳 = 主卦.卦画[i];
-                    }
                     else
-                    {
                         阴阳 = 客卦.卦画[i - 3];
-                    }
                     各爻[i] = new 爻(i + 1, 阴阳, Encoding.UTF8.GetString(bytes.ToArray()));
                 }
             }
 
-            string 用辞 = index switch {
+            string? 用辞 = index switch {
                 0 => Properties.Resources.乾卦用辞,
                 1 => Properties.Resources.坤卦用辞,
                 _ => null
@@ -190,8 +201,8 @@ namespace 周易
         }
         private static 别卦 获取别卦(int index, string 卦名)
         {
-            经卦 主卦 = null;
-            经卦 客卦 = null;
+            经卦? 主卦 = null;
+            经卦? 客卦 = null;
             using (var ms = new MemoryStream(Properties.Resources.别卦经卦对照))
             {
                 for (int i = 0; i < 64; i++)
@@ -204,9 +215,15 @@ namespace 周易
                 }
             }
 
+            Debug.Assert(主卦 is not null);
+            Debug.Assert(客卦 is not null);
+
             string 卦辞;
             爻[] 各爻 = new 爻[6];
-            using (var str = new MemoryStream((byte[])Properties.Resources.ResourceManager.GetObject($"G{index}")))
+
+            var gindex = Properties.Resources.ResourceManager.GetObject($"G{index}") as byte[];
+            Debug.Assert(gindex is not null);
+            using (var str = new MemoryStream(gindex))
             {
                 {
                     List<byte> bytes = new List<byte>(100);
@@ -230,15 +247,15 @@ namespace 周易
                         bytes.Add((byte)br);
                     }
                     阴阳 阴阳;
-                    if (i < 3) // 0, 1, 2
+                    if (i < 3)
                         阴阳 = 主卦.卦画[i];
-                    else // 3, 4, 5
+                    else
                         阴阳 = 客卦.卦画[i - 3];
                     各爻[i] = new 爻(i + 1, 阴阳, Encoding.UTF8.GetString(bytes.ToArray()));
                 }
             }
 
-            string 用辞 = index switch {
+            string? 用辞 = index switch {
                 0 => Properties.Resources.乾卦用辞,
                 1 => Properties.Resources.坤卦用辞,
                 _ => null

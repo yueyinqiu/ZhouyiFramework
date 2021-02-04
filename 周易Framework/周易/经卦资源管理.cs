@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
 namespace 周易
@@ -25,17 +26,21 @@ namespace 周易
         /// Get a trigram from its name.
         /// </summary>
         /// <param name="卦名">The name.</param>
-        /// <returns>The trigram.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">No such trigram was found.</exception>
-        public static 经卦 获取经卦(char 卦名)
+        /// <param name="result">The trigram.</param>
+        /// <returns>A value indicates whether the trigram has been found or not.</returns>
+        public static bool 获取经卦(char 卦名, [NotNullWhen(true)] out 经卦? result)
         {
             var all = Properties.Resources.经卦卦名对照;
             var index = all.IndexOf(卦名);
             if (index == -1)
-                throw new ArgumentOutOfRangeException(nameof(卦名),
-                    $"没有找到 {nameof(卦名)}：{卦名} 对应的经卦。");
-            return new 经卦(index, 卦名, 获取卦对应的自然现象(index), 获取卦画(index));
+            {
+                result = null;
+                return false;
+            }
+            result = new 经卦(index, 卦名, 获取卦对应的自然现象(index), 获取卦画(index));
+            return true;
         }
+
         /// <summary>
         /// Get a trigram from its painting.
         /// </summary>
@@ -43,15 +48,18 @@ namespace 周易
         /// The painting.
         /// Its property <see cref="卦画.爻数"/> should be 3.
         /// </param>
-        /// <returns>The trigram.</returns>
-        /// <exception cref="ArgumentException"> <see cref="卦画.爻数"/> of <paramref name="卦画"/> isn't 3.</exception>
+        /// <param name="result">The trigram.</param>
+        /// <returns>A value indicates whether the trigram has been found or not.</returns>
         /// <exception cref="ArgumentNullException"> <paramref name="卦画"/> is null.</exception>
-        public static 经卦 获取经卦(卦画 卦画)
+        public static bool 获取经卦(卦画 卦画, [NotNullWhen(true)] out 经卦? result)
         {
-            if (卦画 == null)
+            if (卦画 is null)
                 throw new ArgumentNullException(nameof(卦画));
             if (卦画.爻数 != 3)
-                throw new ArgumentException($"{nameof(卦画)}：{卦画} 不正确。应该为三爻。", nameof(卦画));
+            {
+                result = null;
+                return false;
+            }
             int index = default;
             using (var ms = new MemoryStream(Properties.Resources.经卦卦画对照))
             {
@@ -65,7 +73,8 @@ namespace 周易
                     }
                 }
             }
-            return new 经卦(index, 获取卦名(index), 获取卦对应的自然现象(index), 卦画);
+            result = new 经卦(index, 获取卦名(index), 获取卦对应的自然现象(index), 卦画);
+            return true;
         }
         internal static 经卦 获取经卦(int index)
         {

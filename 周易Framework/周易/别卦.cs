@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -9,7 +10,7 @@ namespace 周易
     /// </summary>
     public sealed partial class 别卦
     {
-        internal 别卦(int index, string 卦名, string 卦辞, string 用辞 = null, params 爻[] 各爻)
+        internal 别卦(int index, string 卦名, string 卦辞, string? 用辞 = null, params 爻[] 各爻)
         {
             this.易经序号 = index + 1;
             this.卦名 = 卦名;
@@ -45,7 +46,7 @@ namespace 周易
         /// Get the the words after the word "yong" which only exists in Ch'ien (Heaven) and K'un (Earth).
         /// It will returns null if the hexagram isn't Ch'ien or K'un.
         /// </summary>
-        public string 用辞 { get; }
+        public string? 用辞 { get; }
         /// <summary>
         /// Get the lines of this hexagram.
         /// It will starts from the bottom one.
@@ -67,10 +68,20 @@ namespace 周易
         /// <summary>
         /// Get the upper trigram.
         /// </summary>
-        public 经卦 客卦 => 经卦.获取经卦(new 卦画(false,
-            this.四爻.爻题.爻阴阳,
-            this.五爻.爻题.爻阴阳,
-            this.上爻.爻题.爻阴阳));
+        public 经卦 客卦
+        {
+            get
+            {
+                经卦.获取经卦(
+                    new 卦画(false,
+                    this.四爻.爻题.爻阴阳,
+                    this.五爻.爻题.爻阴阳,
+                    this.上爻.爻题.爻阴阳),
+                    out var result);
+                Debug.Assert(result is not null);
+                return result;
+            }
+        }
         /// <summary>
         /// Get the top (sixth) line.
         /// </summary>
@@ -89,10 +100,20 @@ namespace 周易
         /// <summary>
         /// Get the lower trigram.
         /// </summary>
-        public 经卦 主卦 => 经卦.获取经卦(new 卦画(false,
-            this.初爻.爻题.爻阴阳,
-            this.二爻.爻题.爻阴阳,
-            this.三爻.爻题.爻阴阳));
+        public 经卦 主卦
+        {
+            get
+            {
+                经卦.获取经卦(
+                    new 卦画(false,
+                    this.初爻.爻题.爻阴阳,
+                    this.二爻.爻题.爻阴阳,
+                    this.三爻.爻题.爻阴阳),
+                    out var result);
+                Debug.Assert(result is not null);
+                return result;
+            }
+        }
         /// <summary>
         /// Get the third line.
         /// </summary>
