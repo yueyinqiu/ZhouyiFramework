@@ -1,7 +1,7 @@
 # No More Updates Or Bugfix!
-You can use [__YiJingFramework__](https://github.com/yueyinqiu/YiJingFramework.Core/wiki) instead, whose main parts are about to be finished. *(2021.3.15)*
+A new library (group) [__YiJingFramework__](https://github.com/yueyinqiu/YiJingFramework.Core/wiki) is available to replace this project.
 
-It will allow you to develop your own related libraries and allow translations in different languages.
+It will allow you to develop your own related libraries and accept custom translations.
 
 # 周易Framework
  
