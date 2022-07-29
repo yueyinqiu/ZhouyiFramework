@@ -1,6 +1,10 @@
 # No More Updates Or Bugfix!
 
-A new library (group) [__YiJingFramework__](https://github.com/yueyinqiu/YiJingFramework.Core/wiki) is available now, which can completely replace this project with more features and more freedom.
+A new library (group) [__YiJingFramework__](https://github.com/yueyinqiu/YiJingFramework.Core/wiki) is available now, which can completely replace this project with more features.
+
+# 此项目将不再更新
+
+一组新的包 [__YiJingFramework__](https://github.com/yueyinqiu/YiJingFramework.Core/wiki) 可以完全地替代此项目，并具有更多功能。
 
 # 周易Framework
  
